@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -158,6 +158,19 @@
             </property>
             <property name="text">
              <string>Female</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_scientist_error">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>120</y>
+              <width>211</width>
+              <height>31</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
             </property>
            </widget>
           </widget>
@@ -406,6 +419,19 @@
               <y>110</y>
               <width>231</width>
               <height>20</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_computer_error">
+            <property name="geometry">
+             <rect>
+              <x>20</x>
+              <y>125</y>
+              <width>171</width>
+              <height>21</height>
              </rect>
             </property>
             <property name="text">

@@ -62,12 +62,26 @@ void MainWindow::displayComputers(vector<computer> computers)
 
 void MainWindow::on_button_add_scientist_clicked()
 {
+    ui->label_scientist_error->setText("");
+
     QString name = ui->input_scientist_name->text();
     QString yearBorn = ui->input_scientist_birth->text();
     QString yearDied = ui->input_scientist_death->text();
     QString sex;
 
     bool error = false;
+
+    if(name.isEmpty() || yearBorn.isEmpty())
+    {
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        error = true;
+    }
+    if(error)
+    {
+        return;
+    }
+
+
 
     bool checked_sex_button = false;
     if(ui->button_scientist_male->isChecked())
@@ -79,6 +93,11 @@ void MainWindow::on_button_add_scientist_clicked()
     {
          sex = "Female";
          checked_sex_button = true;
+    }
+    if(!checked_sex_button)
+    {
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        return;
     }
 
     bool success = false;
@@ -109,18 +128,42 @@ void MainWindow::on_button_add_scientist_clicked()
 
 void MainWindow::on_button_add_computer_clicked()
 {
+    ui->label_computer_error->setText("");
+
     QString name = ui->input_computer_name->text();
     QString year = ui->input_computer_year->text();
     QString type = ui->dropdown_computer_type->currentText();
     QString was_built = "";
 
+    bool isError = false;
+
+    if(name.isEmpty() || year.isEmpty() || type.isEmpty())
+    {
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        isError = true;
+    }
+    if(isError)
+    {
+        return;
+    }
+
+    bool was_built_checked = false;
+
     if(ui->radioButton_computer_built_yes->isChecked())
     {
         was_built = "yes";
+        was_built_checked = true;
     }
-    else if(ui->radioButton_computer_built_no)
+    else if(ui->radioButton_computer_built_no->isChecked())
     {
         was_built = "no";
+        was_built_checked = true;
+    }
+
+    if(!was_built_checked)
+    {
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        return;
     }
 
 

@@ -53,6 +53,7 @@ public:
     QPushButton *button_add_scientist;
     QRadioButton *button_scientist_male;
     QRadioButton *button_scientist_female;
+    QLabel *label_scientist_error;
     QWidget *horizontalLayoutWidget_2;
     QHBoxLayout *horizontalLayout_3;
     QGroupBox *groupBox_7;
@@ -77,6 +78,7 @@ public:
     QRadioButton *radioButton_computer_built_yes;
     QRadioButton *radioButton_computer_built_no;
     QLabel *label;
+    QLabel *label_computer_error;
     QGroupBox *groupBox_9;
     QComboBox *comboBox_2;
     QRadioButton *radioButton_9;
@@ -187,6 +189,9 @@ public:
         button_scientist_female = new QRadioButton(groupBox_6);
         button_scientist_female->setObjectName(QStringLiteral("button_scientist_female"));
         button_scientist_female->setGeometry(QRect(260, 60, 61, 17));
+        label_scientist_error = new QLabel(groupBox_6);
+        label_scientist_error->setObjectName(QStringLiteral("label_scientist_error"));
+        label_scientist_error->setGeometry(QRect(10, 120, 211, 31));
 
         horizontalLayout_2->addWidget(groupBox_6);
 
@@ -267,6 +272,9 @@ public:
         label = new QLabel(groupBox_8);
         label->setObjectName(QStringLiteral("label"));
         label->setGeometry(QRect(0, 110, 231, 20));
+        label_computer_error = new QLabel(groupBox_8);
+        label_computer_error->setObjectName(QStringLiteral("label_computer_error"));
+        label_computer_error->setGeometry(QRect(20, 125, 171, 21));
 
         horizontalLayout_5->addWidget(groupBox_8);
 
@@ -466,7 +474,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -482,6 +490,7 @@ public:
         button_add_scientist->setText(QApplication::translate("MainWindow", "Add", 0));
         button_scientist_male->setText(QApplication::translate("MainWindow", "Male", 0));
         button_scientist_female->setText(QApplication::translate("MainWindow", "Female", 0));
+        label_scientist_error->setText(QString());
         groupBox_7->setTitle(QApplication::translate("MainWindow", "Filter", 0));
         radioButton_5->setText(QApplication::translate("MainWindow", "Ascending", 0));
         radioButton_6->setText(QApplication::translate("MainWindow", "Descending", 0));
@@ -498,6 +507,7 @@ public:
         radioButton_computer_built_yes->setText(QApplication::translate("MainWindow", "Yes", 0));
         radioButton_computer_built_no->setText(QApplication::translate("MainWindow", "No", 0));
         label->setText(QString());
+        label_computer_error->setText(QString());
         groupBox_9->setTitle(QApplication::translate("MainWindow", "Filter", 0));
         radioButton_9->setText(QApplication::translate("MainWindow", "Ascending", 0));
         radioButton_10->setText(QApplication::translate("MainWindow", "Descending", 0));
