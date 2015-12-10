@@ -17,11 +17,21 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+
+    void on_button_add_scientist_clicked();
+
+    void on_button_add_computer_clicked();
+
 private:
     void on_button_View_clicked();
 
     void displayAllProgrammers();
     void displayProgrammers(vector<person> programmers);
+
+    void displayAllComputers();
+    void displayComputers(vector<computer> computers);
+
     Manager manager;
 
 private:
