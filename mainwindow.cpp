@@ -73,7 +73,12 @@ void MainWindow::on_button_add_scientist_clicked()
 
     if(name.isEmpty() || yearBorn.isEmpty())
     {
-        ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Input name!</span>");
+        error = true;
+    }
+    if(yearBorn.isEmpty())
+    {
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Input birthyear!</span>");
         error = true;
     }
     if(error)
@@ -96,7 +101,7 @@ void MainWindow::on_button_add_scientist_clicked()
     }
     if(!checked_sex_button)
     {
-        ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Select gender!</span>");
         return;
     }
 
@@ -137,9 +142,19 @@ void MainWindow::on_button_add_computer_clicked()
 
     bool isError = false;
 
-    if(name.isEmpty() || year.isEmpty() || type.isEmpty())
+    if(name.isEmpty())
     {
-        ui->label_computer_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Input name!</span>");
+        isError = true;
+    }
+    if(year.isEmpty())
+    {
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Input year!</span>");
+        isError = true;
+    }
+    if(type.isEmpty())
+    {
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Select type!</span>");
         isError = true;
     }
     if(isError)
@@ -162,7 +177,7 @@ void MainWindow::on_button_add_computer_clicked()
 
     if(!was_built_checked)
     {
-        ui->label_computer_error->setText("<span style='color: #ff0000'>Invalid input!</span>");
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Check if computer was built!</span>");
         return;
     }
 
