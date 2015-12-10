@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QRegExp>
 #include <vector>
 
 using namespace std;
@@ -64,6 +65,8 @@ void MainWindow::on_button_add_scientist_clicked()
 {
     ui->label_scientist_error->setText("");
 
+    QRegExp rx("^([A-Za-z. ])*");
+
     QString name = ui->input_scientist_name->text();
     QString yearBorn = ui->input_scientist_birth->text();
     QString yearDied = ui->input_scientist_death->text();
@@ -71,7 +74,7 @@ void MainWindow::on_button_add_scientist_clicked()
 
     bool error = false;
 
-    if(name.isEmpty() || yearBorn.isEmpty())
+    if(name.isEmpty())
     {
         ui->label_scientist_error->setText("<span style='color: #ff0000'>Input name!</span>");
         error = true;
@@ -79,6 +82,16 @@ void MainWindow::on_button_add_scientist_clicked()
     if(yearBorn.isEmpty())
     {
         ui->label_scientist_error->setText("<span style='color: #ff0000'>Input birthyear!</span>");
+        error = true;
+    }
+    if(yearBorn.length() > 4 || !yearBorn.toInt())
+    {
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid birthyear!</span>");
+        error = true;
+    }
+    if(!rx.exactMatch(name))
+    {
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid name!</span>");
         error = true;
     }
     if(error)
@@ -114,8 +127,16 @@ void MainWindow::on_button_add_scientist_clicked()
     }
     else if(yearDied != "")
     {
+        if(yearDied.length() > 4 || !yearDied.toInt())
+        {
+            ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid deathyear!</span>");
+            return;
+        }
+        else
+        {
         manager.addPersonDead(name.toStdString(),sex.toStdString(),yearBorn.toInt(),yearDied.toInt());
         success = true;
+        }
     }
 
     if(success)
@@ -127,6 +148,10 @@ void MainWindow::on_button_add_scientist_clicked()
         ui->button_scientist_female->setChecked(false);
         ui->button_scientist_male->setChecked(false);
         displayAllProgrammers();
+    }
+    else
+    {
+        ui->label_scientist_error->setText("<span style='color: #ff0000'>Add failed!</span>");
     }
 
 }
@@ -155,6 +180,11 @@ void MainWindow::on_button_add_computer_clicked()
     if(type.isEmpty())
     {
         ui->label_computer_error->setText("<span style='color: #ff0000'>Select type!</span>");
+        isError = true;
+    }
+    if(!year.toInt() || year.length() > 4)
+    {
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Invalid year!</span>");
         isError = true;
     }
     if(isError)
