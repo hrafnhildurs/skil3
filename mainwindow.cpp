@@ -242,12 +242,15 @@ void MainWindow::on_button_add_scientist_clicked()
 
     if(success)
     {
+        ui->statusBar->showMessage("Successfully added scientist", 1500);
+
         ui->input_scientist_name->setText("");
         ui->input_scientist_birth->setText("");
         ui->input_scientist_death->setText("");
         ui->button_scientist_female->setAutoExclusive(false);
         ui->button_scientist_female->setChecked(false);
         ui->button_scientist_male->setChecked(false);
+
         displayAllProgrammers();
     }
     else
@@ -314,6 +317,8 @@ void MainWindow::on_button_add_computer_clicked()
 
 
     manager.addComputer(name.toStdString(),year.toInt(),type.toStdString(),was_built.toStdString());
+
+    ui->statusBar->showMessage("Successfully added computer", 1500);
 
     displayAllComputers();
 
@@ -564,6 +569,8 @@ void MainWindow::on_button_remove_scientist_clicked()
 
     manager.deleteName(currentlySelectedScientist);
 
+    ui->statusBar->showMessage("Successfully removed scientist", 1500);
+
     displayAllProgrammers();
 
     ui->button_remove_scientist->setEnabled(false);
@@ -591,6 +598,8 @@ void MainWindow::on_button_remove_computer_clicked()
 
     manager.deleteComputer(currentlySelectedComputer);
 
+    ui->statusBar->showMessage("Successfully removed computer", 1500);
+
     displayAllComputers();
 
     ui->button_remove_computer->setEnabled(false);
@@ -616,7 +625,11 @@ void MainWindow::on_button_remove_relation_clicked()
 
     manager.deleteRelation(currentlySelectedRelation);
 
+    ui->statusBar->showMessage("Successfully removed relation", 1500);
+
     displayAllRelations();
+
+    ui->button_remove_scientist->setEnabled(false);
 }
 
 

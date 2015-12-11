@@ -18,11 +18,8 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-<<<<<<< Updated upstream
        <number>3</number>
-=======
        <number>2</number>
->>>>>>> Stashed changes
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
