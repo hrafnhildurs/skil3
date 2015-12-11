@@ -15,7 +15,6 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -27,6 +26,7 @@
 #include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -40,9 +40,9 @@ public:
     QVBoxLayout *verticalLayout;
     QTabWidget *tabWidget;
     QWidget *tab_5;
-    QListWidget *list_programmers;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *horizontalLayout_2;
+    QPushButton *pushButton_6;
+    QLabel *label_5;
+    QTableWidget *table_programmers;
     QGroupBox *groupBox_6;
     QLabel *label_2;
     QLabel *label_3;
@@ -54,18 +54,20 @@ public:
     QRadioButton *button_scientist_male;
     QRadioButton *button_scientist_female;
     QLabel *label_scientist_error;
-    QWidget *horizontalLayoutWidget_2;
-    QHBoxLayout *horizontalLayout_3;
     QGroupBox *groupBox_7;
     QComboBox *combo_programmers;
     QRadioButton *radioProgAsc;
     QRadioButton *radioProgDesc;
     QPushButton *button_filterProg;
-    QPushButton *pushButton_6;
-    QLabel *label_5;
     QWidget *tab_6;
-    QWidget *horizontalLayoutWidget_4;
-    QHBoxLayout *horizontalLayout_5;
+    QGroupBox *groupBox_9;
+    QComboBox *combo_computers;
+    QRadioButton *radioCompAsc;
+    QRadioButton *radioCompDesc;
+    QPushButton *button_filterComp;
+    QLabel *label_9;
+    QPushButton *pushButton_9;
+    QTableWidget *table_computers;
     QGroupBox *groupBox_8;
     QLabel *label_6;
     QLabel *label_7;
@@ -79,21 +81,16 @@ public:
     QRadioButton *radioButton_computer_built_no;
     QLabel *label;
     QLabel *label_computer_error;
-    QGroupBox *groupBox_9;
-    QComboBox *combo_computers;
-    QRadioButton *radioCompAsc;
-    QRadioButton *radioCompDesc;
-    QPushButton *button_filterComp;
-    QListWidget *list_computers;
-    QLabel *label_9;
-    QPushButton *pushButton_9;
+    QWidget *tab;
+    QTableWidget *tableWidget;
+    QGroupBox *groupBox;
+    QLineEdit *lineEdit;
+    QGroupBox *groupBox_14;
+    QComboBox *combo_programmers_2;
+    QRadioButton *radioProgAsc_2;
+    QRadioButton *radioProgDesc_2;
+    QPushButton *button_filterProg_2;
     QWidget *tab_7;
-    QWidget *horizontalLayoutWidget_3;
-    QHBoxLayout *horizontalLayout_4;
-    QListView *listView;
-    QWidget *horizontalLayoutWidget_5;
-    QHBoxLayout *horizontalLayout_6;
-    QListView *listView_2;
     QPushButton *pushButton_10;
     QLabel *label_11;
     QLabel *label_12;
@@ -102,33 +99,25 @@ public:
     QLabel *label_14;
     QLineEdit *lineEdit_12;
     QLabel *label_15;
-    QWidget *horizontalLayoutWidget_6;
-    QHBoxLayout *horizontalLayout_7;
+    QListView *listView;
+    QListView *listView_2;
     QGroupBox *groupBox_10;
     QComboBox *comboBox_4;
     QRadioButton *radioButton_11;
     QRadioButton *radioButton_14;
-    QWidget *horizontalLayoutWidget_7;
-    QHBoxLayout *horizontalLayout_8;
     QGroupBox *groupBox_11;
     QComboBox *comboBox_5;
     QRadioButton *radioButton_12;
     QRadioButton *radioButton_13;
     QWidget *tab_8;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout_3;
     QGroupBox *groupBox_12;
     QLabel *label_16;
     QLineEdit *text_search;
     QPushButton *button_search;
-    QWidget *verticalLayoutWidget_2;
-    QVBoxLayout *verticalLayout_4;
-    QListWidget *list_search;
-    QWidget *verticalLayoutWidget_3;
-    QVBoxLayout *verticalLayout_5;
     QGroupBox *groupBox_13;
     QComboBox *combo_search;
     QLabel *label_17;
+    QListWidget *list_search;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -148,20 +137,28 @@ public:
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
-        list_programmers = new QListWidget(tab_5);
-        list_programmers->setObjectName(QStringLiteral("list_programmers"));
-        list_programmers->setGeometry(QRect(0, 170, 583, 281));
-        list_programmers->setAutoFillBackground(true);
-        horizontalLayoutWidget = new QWidget(tab_5);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(0, 10, 351, 161));
-        horizontalLayout_2 = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout_2->setSpacing(6);
-        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
-        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        groupBox_6 = new QGroupBox(horizontalLayoutWidget);
+        pushButton_6 = new QPushButton(tab_5);
+        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
+        pushButton_6->setGeometry(QRect(10, 490, 81, 23));
+        label_5 = new QLabel(tab_5);
+        label_5->setObjectName(QStringLiteral("label_5"));
+        label_5->setGeometry(QRect(10, 470, 311, 16));
+        table_programmers = new QTableWidget(tab_5);
+        if (table_programmers->columnCount() < 4)
+            table_programmers->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem = new QTableWidgetItem();
+        table_programmers->setHorizontalHeaderItem(0, __qtablewidgetitem);
+        QTableWidgetItem *__qtablewidgetitem1 = new QTableWidgetItem();
+        table_programmers->setHorizontalHeaderItem(1, __qtablewidgetitem1);
+        QTableWidgetItem *__qtablewidgetitem2 = new QTableWidgetItem();
+        table_programmers->setHorizontalHeaderItem(2, __qtablewidgetitem2);
+        QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
+        table_programmers->setHorizontalHeaderItem(3, __qtablewidgetitem3);
+        table_programmers->setObjectName(QStringLiteral("table_programmers"));
+        table_programmers->setGeometry(QRect(0, 170, 581, 291));
+        groupBox_6 = new QGroupBox(tab_5);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
+        groupBox_6->setGeometry(QRect(0, 10, 349, 159));
         label_2 = new QLabel(groupBox_6);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 30, 47, 13));
@@ -192,19 +189,9 @@ public:
         label_scientist_error = new QLabel(groupBox_6);
         label_scientist_error->setObjectName(QStringLiteral("label_scientist_error"));
         label_scientist_error->setGeometry(QRect(10, 120, 211, 31));
-
-        horizontalLayout_2->addWidget(groupBox_6);
-
-        horizontalLayoutWidget_2 = new QWidget(tab_5);
-        horizontalLayoutWidget_2->setObjectName(QStringLiteral("horizontalLayoutWidget_2"));
-        horizontalLayoutWidget_2->setGeometry(QRect(350, 10, 231, 161));
-        horizontalLayout_3 = new QHBoxLayout(horizontalLayoutWidget_2);
-        horizontalLayout_3->setSpacing(6);
-        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
-        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        groupBox_7 = new QGroupBox(horizontalLayoutWidget_2);
+        groupBox_7 = new QGroupBox(tab_5);
         groupBox_7->setObjectName(QStringLiteral("groupBox_7"));
+        groupBox_7->setGeometry(QRect(350, 10, 229, 159));
         combo_programmers = new QComboBox(groupBox_7);
         combo_programmers->setObjectName(QStringLiteral("combo_programmers"));
         combo_programmers->setGeometry(QRect(20, 30, 181, 22));
@@ -217,28 +204,46 @@ public:
         button_filterProg = new QPushButton(groupBox_7);
         button_filterProg->setObjectName(QStringLiteral("button_filterProg"));
         button_filterProg->setGeometry(QRect(120, 130, 81, 23));
-
-        horizontalLayout_3->addWidget(groupBox_7);
-
-        pushButton_6 = new QPushButton(tab_5);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(10, 490, 81, 23));
-        label_5 = new QLabel(tab_5);
-        label_5->setObjectName(QStringLiteral("label_5"));
-        label_5->setGeometry(QRect(10, 470, 311, 16));
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
-        horizontalLayoutWidget_4 = new QWidget(tab_6);
-        horizontalLayoutWidget_4->setObjectName(QStringLiteral("horizontalLayoutWidget_4"));
-        horizontalLayoutWidget_4->setGeometry(QRect(0, 10, 351, 161));
-        horizontalLayout_5 = new QHBoxLayout(horizontalLayoutWidget_4);
-        horizontalLayout_5->setSpacing(6);
-        horizontalLayout_5->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_5->setObjectName(QStringLiteral("horizontalLayout_5"));
-        horizontalLayout_5->setContentsMargins(0, 0, 0, 0);
-        groupBox_8 = new QGroupBox(horizontalLayoutWidget_4);
+        groupBox_9 = new QGroupBox(tab_6);
+        groupBox_9->setObjectName(QStringLiteral("groupBox_9"));
+        groupBox_9->setGeometry(QRect(350, 10, 229, 159));
+        combo_computers = new QComboBox(groupBox_9);
+        combo_computers->setObjectName(QStringLiteral("combo_computers"));
+        combo_computers->setGeometry(QRect(20, 30, 181, 22));
+        radioCompAsc = new QRadioButton(groupBox_9);
+        radioCompAsc->setObjectName(QStringLiteral("radioCompAsc"));
+        radioCompAsc->setGeometry(QRect(30, 70, 71, 20));
+        radioCompDesc = new QRadioButton(groupBox_9);
+        radioCompDesc->setObjectName(QStringLiteral("radioCompDesc"));
+        radioCompDesc->setGeometry(QRect(120, 70, 81, 21));
+        button_filterComp = new QPushButton(groupBox_9);
+        button_filterComp->setObjectName(QStringLiteral("button_filterComp"));
+        button_filterComp->setGeometry(QRect(120, 130, 81, 23));
+        label_9 = new QLabel(tab_6);
+        label_9->setObjectName(QStringLiteral("label_9"));
+        label_9->setGeometry(QRect(10, 470, 311, 16));
+        pushButton_9 = new QPushButton(tab_6);
+        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
+        pushButton_9->setGeometry(QRect(10, 490, 81, 23));
+        table_computers = new QTableWidget(tab_6);
+        if (table_computers->columnCount() < 4)
+            table_computers->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
+        table_computers->setHorizontalHeaderItem(0, __qtablewidgetitem4);
+        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
+        table_computers->setHorizontalHeaderItem(1, __qtablewidgetitem5);
+        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
+        table_computers->setHorizontalHeaderItem(2, __qtablewidgetitem6);
+        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
+        table_computers->setHorizontalHeaderItem(3, __qtablewidgetitem7);
+        table_computers->setObjectName(QStringLiteral("table_computers"));
+        table_computers->setGeometry(QRect(0, 170, 581, 291));
+        groupBox_8 = new QGroupBox(tab_6);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
+        groupBox_8->setGeometry(QRect(0, 10, 349, 159));
         label_6 = new QLabel(groupBox_8);
         label_6->setObjectName(QStringLiteral("label_6"));
         label_6->setGeometry(QRect(10, 30, 47, 13));
@@ -275,62 +280,36 @@ public:
         label_computer_error = new QLabel(groupBox_8);
         label_computer_error->setObjectName(QStringLiteral("label_computer_error"));
         label_computer_error->setGeometry(QRect(20, 125, 171, 21));
-
-        horizontalLayout_5->addWidget(groupBox_8);
-
-        groupBox_9 = new QGroupBox(tab_6);
-        groupBox_9->setObjectName(QStringLiteral("groupBox_9"));
-        groupBox_9->setGeometry(QRect(350, 10, 229, 159));
-        combo_computers = new QComboBox(groupBox_9);
-        combo_computers->setObjectName(QStringLiteral("combo_computers"));
-        combo_computers->setGeometry(QRect(20, 30, 181, 22));
-        radioCompAsc = new QRadioButton(groupBox_9);
-        radioCompAsc->setObjectName(QStringLiteral("radioCompAsc"));
-        radioCompAsc->setGeometry(QRect(30, 70, 71, 20));
-        radioCompDesc = new QRadioButton(groupBox_9);
-        radioCompDesc->setObjectName(QStringLiteral("radioCompDesc"));
-        radioCompDesc->setGeometry(QRect(120, 70, 81, 21));
-        button_filterComp = new QPushButton(groupBox_9);
-        button_filterComp->setObjectName(QStringLiteral("button_filterComp"));
-        button_filterComp->setGeometry(QRect(120, 130, 81, 23));
-        list_computers = new QListWidget(tab_6);
-        list_computers->setObjectName(QStringLiteral("list_computers"));
-        list_computers->setGeometry(QRect(0, 170, 583, 281));
-        label_9 = new QLabel(tab_6);
-        label_9->setObjectName(QStringLiteral("label_9"));
-        label_9->setGeometry(QRect(10, 470, 311, 16));
-        pushButton_9 = new QPushButton(tab_6);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        pushButton_9->setGeometry(QRect(10, 490, 81, 23));
         tabWidget->addTab(tab_6, QString());
+        tab = new QWidget();
+        tab->setObjectName(QStringLiteral("tab"));
+        tableWidget = new QTableWidget(tab);
+        tableWidget->setObjectName(QStringLiteral("tableWidget"));
+        tableWidget->setGeometry(QRect(0, 170, 581, 351));
+        groupBox = new QGroupBox(tab);
+        groupBox->setObjectName(QStringLiteral("groupBox"));
+        groupBox->setGeometry(QRect(0, 10, 341, 161));
+        lineEdit = new QLineEdit(groupBox);
+        lineEdit->setObjectName(QStringLiteral("lineEdit"));
+        lineEdit->setGeometry(QRect(10, 20, 321, 20));
+        groupBox_14 = new QGroupBox(tab);
+        groupBox_14->setObjectName(QStringLiteral("groupBox_14"));
+        groupBox_14->setGeometry(QRect(340, 10, 229, 159));
+        combo_programmers_2 = new QComboBox(groupBox_14);
+        combo_programmers_2->setObjectName(QStringLiteral("combo_programmers_2"));
+        combo_programmers_2->setGeometry(QRect(20, 30, 181, 22));
+        radioProgAsc_2 = new QRadioButton(groupBox_14);
+        radioProgAsc_2->setObjectName(QStringLiteral("radioProgAsc_2"));
+        radioProgAsc_2->setGeometry(QRect(30, 70, 71, 20));
+        radioProgDesc_2 = new QRadioButton(groupBox_14);
+        radioProgDesc_2->setObjectName(QStringLiteral("radioProgDesc_2"));
+        radioProgDesc_2->setGeometry(QRect(120, 70, 81, 21));
+        button_filterProg_2 = new QPushButton(groupBox_14);
+        button_filterProg_2->setObjectName(QStringLiteral("button_filterProg_2"));
+        button_filterProg_2->setGeometry(QRect(120, 130, 81, 23));
+        tabWidget->addTab(tab, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
-        horizontalLayoutWidget_3 = new QWidget(tab_7);
-        horizontalLayoutWidget_3->setObjectName(QStringLiteral("horizontalLayoutWidget_3"));
-        horizontalLayoutWidget_3->setGeometry(QRect(0, 130, 291, 331));
-        horizontalLayout_4 = new QHBoxLayout(horizontalLayoutWidget_3);
-        horizontalLayout_4->setSpacing(6);
-        horizontalLayout_4->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_4->setObjectName(QStringLiteral("horizontalLayout_4"));
-        horizontalLayout_4->setContentsMargins(1, 1, 1, 0);
-        listView = new QListView(horizontalLayoutWidget_3);
-        listView->setObjectName(QStringLiteral("listView"));
-
-        horizontalLayout_4->addWidget(listView);
-
-        horizontalLayoutWidget_5 = new QWidget(tab_7);
-        horizontalLayoutWidget_5->setObjectName(QStringLiteral("horizontalLayoutWidget_5"));
-        horizontalLayoutWidget_5->setGeometry(QRect(299, 129, 281, 331));
-        horizontalLayout_6 = new QHBoxLayout(horizontalLayoutWidget_5);
-        horizontalLayout_6->setSpacing(6);
-        horizontalLayout_6->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_6->setObjectName(QStringLiteral("horizontalLayout_6"));
-        horizontalLayout_6->setContentsMargins(1, 1, 1, 0);
-        listView_2 = new QListView(horizontalLayoutWidget_5);
-        listView_2->setObjectName(QStringLiteral("listView_2"));
-
-        horizontalLayout_6->addWidget(listView_2);
-
         pushButton_10 = new QPushButton(tab_7);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
         pushButton_10->setGeometry(QRect(440, 490, 131, 23));
@@ -355,16 +334,15 @@ public:
         label_15 = new QLabel(tab_7);
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setGeometry(QRect(410, 470, 161, 16));
-        horizontalLayoutWidget_6 = new QWidget(tab_7);
-        horizontalLayoutWidget_6->setObjectName(QStringLiteral("horizontalLayoutWidget_6"));
-        horizontalLayoutWidget_6->setGeometry(QRect(0, 10, 291, 61));
-        horizontalLayout_7 = new QHBoxLayout(horizontalLayoutWidget_6);
-        horizontalLayout_7->setSpacing(6);
-        horizontalLayout_7->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        horizontalLayout_7->setContentsMargins(0, 0, 0, 0);
-        groupBox_10 = new QGroupBox(horizontalLayoutWidget_6);
+        listView = new QListView(tab_7);
+        listView->setObjectName(QStringLiteral("listView"));
+        listView->setGeometry(QRect(0, 130, 291, 329));
+        listView_2 = new QListView(tab_7);
+        listView_2->setObjectName(QStringLiteral("listView_2"));
+        listView_2->setGeometry(QRect(300, 130, 279, 329));
+        groupBox_10 = new QGroupBox(tab_7);
         groupBox_10->setObjectName(QStringLiteral("groupBox_10"));
+        groupBox_10->setGeometry(QRect(10, 10, 289, 59));
         comboBox_4 = new QComboBox(groupBox_10);
         comboBox_4->setObjectName(QStringLiteral("comboBox_4"));
         comboBox_4->setGeometry(QRect(10, 20, 131, 22));
@@ -374,19 +352,9 @@ public:
         radioButton_14 = new QRadioButton(groupBox_10);
         radioButton_14->setObjectName(QStringLiteral("radioButton_14"));
         radioButton_14->setGeometry(QRect(210, 20, 82, 17));
-
-        horizontalLayout_7->addWidget(groupBox_10);
-
-        horizontalLayoutWidget_7 = new QWidget(tab_7);
-        horizontalLayoutWidget_7->setObjectName(QStringLiteral("horizontalLayoutWidget_7"));
-        horizontalLayoutWidget_7->setGeometry(QRect(300, 10, 281, 61));
-        horizontalLayout_8 = new QHBoxLayout(horizontalLayoutWidget_7);
-        horizontalLayout_8->setSpacing(6);
-        horizontalLayout_8->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        horizontalLayout_8->setContentsMargins(0, 0, 0, 0);
-        groupBox_11 = new QGroupBox(horizontalLayoutWidget_7);
+        groupBox_11 = new QGroupBox(tab_7);
         groupBox_11->setObjectName(QStringLiteral("groupBox_11"));
+        groupBox_11->setGeometry(QRect(290, 10, 279, 59));
         comboBox_5 = new QComboBox(groupBox_11);
         comboBox_5->setObjectName(QStringLiteral("comboBox_5"));
         comboBox_5->setGeometry(QRect(10, 20, 131, 22));
@@ -396,22 +364,12 @@ public:
         radioButton_13 = new QRadioButton(groupBox_11);
         radioButton_13->setObjectName(QStringLiteral("radioButton_13"));
         radioButton_13->setGeometry(QRect(200, 20, 82, 17));
-
-        horizontalLayout_8->addWidget(groupBox_11);
-
         tabWidget->addTab(tab_7, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
-        verticalLayoutWidget = new QWidget(tab_8);
-        verticalLayoutWidget->setObjectName(QStringLiteral("verticalLayoutWidget"));
-        verticalLayoutWidget->setGeometry(QRect(0, 9, 321, 111));
-        verticalLayout_3 = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        groupBox_12 = new QGroupBox(verticalLayoutWidget);
+        groupBox_12 = new QGroupBox(tab_8);
         groupBox_12->setObjectName(QStringLiteral("groupBox_12"));
+        groupBox_12->setGeometry(QRect(0, 10, 319, 109));
         label_16 = new QLabel(groupBox_12);
         label_16->setObjectName(QStringLiteral("label_16"));
         label_16->setGeometry(QRect(10, 30, 47, 13));
@@ -421,41 +379,18 @@ public:
         button_search = new QPushButton(groupBox_12);
         button_search->setObjectName(QStringLiteral("button_search"));
         button_search->setGeometry(QRect(210, 70, 101, 23));
-
-        verticalLayout_3->addWidget(groupBox_12);
-
-        verticalLayoutWidget_2 = new QWidget(tab_8);
-        verticalLayoutWidget_2->setObjectName(QStringLiteral("verticalLayoutWidget_2"));
-        verticalLayoutWidget_2->setGeometry(QRect(0, 129, 581, 401));
-        verticalLayout_4 = new QVBoxLayout(verticalLayoutWidget_2);
-        verticalLayout_4->setSpacing(6);
-        verticalLayout_4->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
-        verticalLayout_4->setContentsMargins(0, 0, 0, 0);
-        list_search = new QListWidget(verticalLayoutWidget_2);
-        list_search->setObjectName(QStringLiteral("list_search"));
-
-        verticalLayout_4->addWidget(list_search);
-
-        verticalLayoutWidget_3 = new QWidget(tab_8);
-        verticalLayoutWidget_3->setObjectName(QStringLiteral("verticalLayoutWidget_3"));
-        verticalLayoutWidget_3->setGeometry(QRect(319, 9, 261, 111));
-        verticalLayout_5 = new QVBoxLayout(verticalLayoutWidget_3);
-        verticalLayout_5->setSpacing(6);
-        verticalLayout_5->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
-        verticalLayout_5->setContentsMargins(0, 0, 0, 0);
-        groupBox_13 = new QGroupBox(verticalLayoutWidget_3);
+        groupBox_13 = new QGroupBox(tab_8);
         groupBox_13->setObjectName(QStringLiteral("groupBox_13"));
+        groupBox_13->setGeometry(QRect(320, 10, 259, 109));
         combo_search = new QComboBox(groupBox_13);
         combo_search->setObjectName(QStringLiteral("combo_search"));
         combo_search->setGeometry(QRect(120, 20, 121, 22));
         label_17 = new QLabel(groupBox_13);
         label_17->setObjectName(QStringLiteral("label_17"));
         label_17->setGeometry(QRect(10, 20, 111, 16));
-
-        verticalLayout_5->addWidget(groupBox_13);
-
+        list_search = new QListWidget(tab_8);
+        list_search->setObjectName(QStringLiteral("list_search"));
+        list_search->setGeometry(QRect(0, 110, 579, 399));
         tabWidget->addTab(tab_8, QString());
 
         verticalLayout->addWidget(tabWidget);
@@ -463,7 +398,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 607, 20));
+        menuBar->setGeometry(QRect(0, 0, 607, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -474,7 +409,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -483,6 +418,16 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        pushButton_6->setText(QApplication::translate("MainWindow", "Remove", 0));
+        label_5->setText(QApplication::translate("MainWindow", "Seletect a Scientist to remove from database and push remove", 0));
+        QTableWidgetItem *___qtablewidgetitem = table_programmers->horizontalHeaderItem(0);
+        ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Name", 0));
+        QTableWidgetItem *___qtablewidgetitem1 = table_programmers->horizontalHeaderItem(1);
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "New Column", 0));
+        QTableWidgetItem *___qtablewidgetitem2 = table_programmers->horizontalHeaderItem(2);
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Gender", 0));
+        QTableWidgetItem *___qtablewidgetitem3 = table_programmers->horizontalHeaderItem(3);
+        ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Death year", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Add Scientist", 0));
         label_2->setText(QApplication::translate("MainWindow", "Name: ", 0));
         label_3->setText(QApplication::translate("MainWindow", "Birth:", 0));
@@ -495,9 +440,21 @@ public:
         radioProgAsc->setText(QApplication::translate("MainWindow", "Ascending", 0));
         radioProgDesc->setText(QApplication::translate("MainWindow", "Descending", 0));
         button_filterProg->setText(QApplication::translate("MainWindow", "Filter", 0));
-        pushButton_6->setText(QApplication::translate("MainWindow", "Remove", 0));
-        label_5->setText(QApplication::translate("MainWindow", "Seletect a Scientist to remove from database and push remove", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "Scientists", 0));
+        groupBox_9->setTitle(QApplication::translate("MainWindow", "Filter", 0));
+        radioCompAsc->setText(QApplication::translate("MainWindow", "Ascending", 0));
+        radioCompDesc->setText(QApplication::translate("MainWindow", "Descending", 0));
+        button_filterComp->setText(QApplication::translate("MainWindow", "Filter", 0));
+        label_9->setText(QApplication::translate("MainWindow", "Seletect a Scientist to remove from database and push remove", 0));
+        pushButton_9->setText(QApplication::translate("MainWindow", "Remove", 0));
+        QTableWidgetItem *___qtablewidgetitem4 = table_computers->horizontalHeaderItem(0);
+        ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "New Column", 0));
+        QTableWidgetItem *___qtablewidgetitem5 = table_computers->horizontalHeaderItem(1);
+        ___qtablewidgetitem5->setText(QApplication::translate("MainWindow", "Name", 0));
+        QTableWidgetItem *___qtablewidgetitem6 = table_computers->horizontalHeaderItem(2);
+        ___qtablewidgetitem6->setText(QApplication::translate("MainWindow", "Year", 0));
+        QTableWidgetItem *___qtablewidgetitem7 = table_computers->horizontalHeaderItem(3);
+        ___qtablewidgetitem7->setText(QApplication::translate("MainWindow", "Was i built", 0));
         groupBox_8->setTitle(QApplication::translate("MainWindow", "Add Computers", 0));
         label_6->setText(QApplication::translate("MainWindow", "Name: ", 0));
         label_7->setText(QApplication::translate("MainWindow", "Year", 0));
@@ -508,13 +465,13 @@ public:
         radioButton_computer_built_no->setText(QApplication::translate("MainWindow", "No", 0));
         label->setText(QString());
         label_computer_error->setText(QString());
-        groupBox_9->setTitle(QApplication::translate("MainWindow", "Filter", 0));
-        radioCompAsc->setText(QApplication::translate("MainWindow", "Ascending", 0));
-        radioCompDesc->setText(QApplication::translate("MainWindow", "Descending", 0));
-        button_filterComp->setText(QApplication::translate("MainWindow", "Filter", 0));
-        label_9->setText(QApplication::translate("MainWindow", "Seletect a Scientist to remove from database and push remove", 0));
-        pushButton_9->setText(QApplication::translate("MainWindow", "Remove", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "Computers", 0));
+        groupBox->setTitle(QApplication::translate("MainWindow", "Search", 0));
+        groupBox_14->setTitle(QApplication::translate("MainWindow", "Filter", 0));
+        radioProgAsc_2->setText(QApplication::translate("MainWindow", "Ascending", 0));
+        radioProgDesc_2->setText(QApplication::translate("MainWindow", "Descending", 0));
+        button_filterProg_2->setText(QApplication::translate("MainWindow", "Filter", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Relations", 0));
         pushButton_10->setText(QApplication::translate("MainWindow", "Connect", 0));
         label_11->setText(QApplication::translate("MainWindow", "Scientists", 0));
         label_12->setText(QApplication::translate("MainWindow", "Comptuers", 0));
@@ -527,7 +484,7 @@ public:
         groupBox_11->setTitle(QApplication::translate("MainWindow", "Sort computers", 0));
         radioButton_12->setText(QApplication::translate("MainWindow", "ASC", 0));
         radioButton_13->setText(QApplication::translate("MainWindow", "DESC", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "Relations", 0));
+        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "Add relations", 0));
         groupBox_12->setTitle(QApplication::translate("MainWindow", "Search in database", 0));
         label_16->setText(QApplication::translate("MainWindow", "Search:", 0));
         button_search->setText(QApplication::translate("MainWindow", "Search", 0));

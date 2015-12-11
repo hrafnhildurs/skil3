@@ -3,8 +3,8 @@
 
 #include <QRegExp>
 #include <vector>
-
 using namespace std;
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -60,24 +60,42 @@ void MainWindow::displayAllComputers()
 
 void MainWindow::displayProgrammers(vector<person> programmers)
 {
-    ui->list_programmers->clear();
+    ui->table_programmers->clearContents();
+    ui->table_programmers->setRowCount(programmers.size());
 
-    for(unsigned int i = 0; i < programmers.size(); i++)
+    for(unsigned int row = 0; row < programmers.size(); row++)
     {
-        person currentPerson = programmers[i];
+        person currentPerson = programmers[row];
 
-        ui->list_programmers->addItem(QString::fromStdString(currentPerson.returnName()));
+        QString name = QString::fromStdString(currentPerson.returnName());
+        QString gender = QString::fromStdString(currentPerson.returnSex());
+        QString birthyear = QString::number(currentPerson.returnBirthYear());
+        QString deathyear = QString::number(currentPerson.returnDeathYear());
+
+        ui->table_programmers->setItem(row, 0, new QTableWidgetItem(name));
+        ui->table_programmers->setItem(row, 1, new QTableWidgetItem(gender));
+        ui->table_programmers->setItem(row, 2, new QTableWidgetItem(birthyear));
+        ui->table_programmers->setItem(row, 3, new QTableWidgetItem(deathyear));
     }
 }
 void MainWindow::displayComputers(vector<computer> computers)
 {
-    ui->list_computers->clear();
+    ui->table_computers->clearContents();
+    ui->table_computers->setRowCount(computers.size());
 
-    for(unsigned int i = 0; i < computers.size(); i++)
+    for(unsigned int row = 0; row < computers.size(); row++)
     {
-        computer currentComputer = computers[i];
+        computer currentComputer = computers[row];
 
-        ui->list_computers->addItem(QString::fromStdString(currentComputer.returnComName()));
+        QString name = QString::fromStdString(currentComputer.returnComName());
+        QString year = QString::number(currentComputer.returnComYear());
+        QString type = QString::fromStdString(currentComputer.returnComType());
+        QString built = QString::fromStdString(currentComputer.returnComBuilt());
+
+        ui->table_computers->setItem(row, 0, new QTableWidgetItem(name));
+        ui->table_computers->setItem(row, 1, new QTableWidgetItem(year));
+        ui->table_computers->setItem(row, 2, new QTableWidgetItem(type));
+        ui->table_computers->setItem(row, 3, new QTableWidgetItem(built));
     }
 }
 
