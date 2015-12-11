@@ -27,7 +27,17 @@ private slots:
 
     void on_button_filterComp_clicked();
 
-    void on_text_search_textChanged(const QString &arg1);
+    void on_text_search_textChanged();
+
+    void on_input_searchProg_textChanged();
+
+    void on_input_searchComp_textChanged();
+
+    void on_combo_addRelationSortProg_currentIndexChanged();
+
+    void on_combo_addRelationSortComp_currentIndexChanged();
+
+    void on_combo_search_currentIndexChanged();
 
 private:
     void on_button_View_clicked();
@@ -35,10 +45,12 @@ private:
     void displayAllProgrammers();
     void displayProgrammers(vector<person> programmers);
     void displaySearchProg(vector<person> programmers);
+    void displaySearchProgRelation(vector<person> programmers);
 
     void displayAllComputers();
     void displayComputers(vector<computer> computers);
     void displaySearchComp(vector<computer> computers);
+    void displaySearchCompRelation(vector<computer> computers);
 
     Manager manager;
 

@@ -37,6 +37,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->combo_search->addItem("Scientists");
     ui->combo_search->addItem("Computers");
 
+    //dropdown menu for sort add relation
+    ui->combo_addRelationSortProg->addItem("Ascending");
+    ui->combo_addRelationSortProg->addItem("Descending");
+
+    ui->combo_addRelationSortComp->addItem("Ascending");
+    ui->combo_addRelationSortComp->addItem("Descending");
+
 
     //fixed window size
     setFixedSize(620,600);
@@ -62,6 +69,7 @@ void MainWindow::displayProgrammers(vector<person> programmers)
 {
     ui->table_programmers->clearContents();
     ui->table_programmers->setRowCount(programmers.size());
+    displaySearchProg(programmers);
 
     for(unsigned int row = 0; row < programmers.size(); row++)
     {
@@ -372,7 +380,39 @@ void MainWindow::displaySearchComp(vector<computer> computers)
     }
 }
 
-void MainWindow::on_text_search_textChanged(const QString &arg1)
+void MainWindow::displaySearchCompRelation(vector<computer> computers)
+{
+    ui->table_realation_computers->clearContents();
+    ui->table_realation_computers->setRowCount(computers.size());
+
+    for(unsigned int rowi = 0; rowi < computers.size(); rowi++)
+    {
+        computer currentComputer = computers[rowi];
+
+        QString cname = QString::fromStdString(currentComputer.returnComName());
+
+        ui->table_realation_computers->setItem(rowi, 0, new QTableWidgetItem(cname));
+
+    }
+}
+
+void MainWindow::displaySearchProgRelation(vector<person> programmers)
+{
+    ui->table_realation_person->clearContents();
+    ui->table_realation_person->setRowCount(programmers.size());
+
+    for(unsigned int rowi = 0; rowi < programmers.size(); rowi++)
+    {
+        person currentPerson = programmers[rowi];
+
+        QString pname = QString::fromStdString(currentPerson.returnName());
+
+        ui->table_realation_person->setItem(rowi, 0, new QTableWidgetItem(pname));
+
+    }
+}
+
+void MainWindow::on_text_search_textChanged()
 {
     QString currentSort = ui->combo_search->currentText();
     QString currentWord = ui->text_search->text();
@@ -385,6 +425,68 @@ void MainWindow::on_text_search_textChanged(const QString &arg1)
     else if(currentSort == "Computers")
     {
         vector<computer> computers = manager.searchComp(currentWord.toStdString());
+        displaySearchComp(computers);
+    }
+}
+
+void MainWindow::on_input_searchProg_textChanged()
+{
+    QString currentWord = ui->input_searchProg->text();
+    vector<person> programmers = manager.search(currentWord.toStdString());
+    displaySearchProgRelation(programmers);
+}
+
+void MainWindow::on_input_searchComp_textChanged()
+{
+    QString currentWord = ui->input_searchComp->text();
+    vector<computer> computers = manager.searchComp(currentWord.toStdString());
+    displaySearchCompRelation(computers);
+}
+
+void MainWindow::on_combo_addRelationSortProg_currentIndexChanged()
+{
+    QString currentText = ui->combo_addRelationSortProg->currentText();
+
+    if(currentText == "Ascending")
+    {
+        vector<person> programmers = manager.alphabeticSortAsc();
+        displayProgrammers(programmers);
+    }
+    else
+    {
+        vector<person> programmers = manager.alphabeticSortDes();
+        displayProgrammers(programmers);
+    }
+}
+
+void MainWindow::on_combo_addRelationSortComp_currentIndexChanged()
+{
+
+    QString currentText = ui->combo_addRelationSortComp->currentText();
+
+    if(currentText == "Ascending")
+    {
+        vector<computer> computers = manager.computerSortAsc();
+        displayComputers(computers);
+    }
+    else
+    {
+        vector<computer> computers = manager.computerSortDesc();
+        displayComputers(computers);
+    }
+}
+
+void MainWindow::on_combo_search_currentIndexChanged()
+{
+    QString currentType = ui->combo_search->currentText();
+    if(currentType == "Scientists")
+    {
+        vector<person> programmers = manager.asInserted();
+        displaySearchProg(programmers);
+    }
+    else if(currentType == "Computers")
+    {
+        vector<computer> computers = manager.computerAsInserted();
         displaySearchComp(computers);
     }
 }

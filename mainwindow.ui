@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -386,17 +386,17 @@
         </property>
         <column>
          <property name="text">
-          <string>New Column</string>
-         </property>
-        </column>
-        <column>
-         <property name="text">
           <string>Name</string>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Year</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Type</string>
          </property>
         </column>
         <column>
@@ -570,7 +570,7 @@
        <attribute name="title">
         <string>Relations</string>
        </attribute>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="table_ralarions">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -592,7 +592,7 @@
         <property name="title">
          <string>Search</string>
         </property>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="input_relationSearch">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -709,7 +709,7 @@
          <string>Comptuers</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_11">
+       <widget class="QLineEdit" name="input_searchProg">
         <property name="geometry">
          <rect>
           <x>100</x>
@@ -745,7 +745,7 @@
          <string>Search in computers</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_12">
+       <widget class="QLineEdit" name="input_searchComp">
         <property name="geometry">
          <rect>
           <x>400</x>
@@ -780,7 +780,7 @@
         <property name="title">
          <string>Sort scientists</string>
         </property>
-        <widget class="QComboBox" name="comboBox_4">
+        <widget class="QComboBox" name="combo_addRelationSortProg">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -788,32 +788,6 @@
            <width>131</width>
            <height>22</height>
           </rect>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_11">
-         <property name="geometry">
-          <rect>
-           <x>160</x>
-           <y>20</y>
-           <width>82</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>ASC</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_14">
-         <property name="geometry">
-          <rect>
-           <x>210</x>
-           <y>20</y>
-           <width>82</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>DESC</string>
          </property>
         </widget>
        </widget>
@@ -829,7 +803,7 @@
         <property name="title">
          <string>Sort computers</string>
         </property>
-        <widget class="QComboBox" name="comboBox_5">
+        <widget class="QComboBox" name="combo_addRelationSortComp">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -837,32 +811,6 @@
            <width>131</width>
            <height>22</height>
           </rect>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_12">
-         <property name="geometry">
-          <rect>
-           <x>150</x>
-           <y>20</y>
-           <width>82</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>ASC</string>
-         </property>
-        </widget>
-        <widget class="QRadioButton" name="radioButton_13">
-         <property name="geometry">
-          <rect>
-           <x>200</x>
-           <y>20</y>
-           <width>82</width>
-           <height>17</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>DESC</string>
          </property>
         </widget>
        </widget>
@@ -1025,7 +973,7 @@
      <x>0</x>
      <y>0</y>
      <width>607</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
