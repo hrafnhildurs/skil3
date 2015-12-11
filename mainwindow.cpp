@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     displayAllProgrammers();
     displayAllComputers();
+    displayAllRelations();
 
     //dropdown menu for computer types
     ui->dropdown_computer_type->addItem("");
@@ -64,7 +65,11 @@ void MainWindow::displayAllComputers()
     vector<computer> computers = manager.computerAsInserted();
     displayComputers(computers);
 }
-
+void MainWindow::displayAllRelations()
+{
+     vector<relations> relation = manager.relation();
+     displayRelations(relation);
+}
 void MainWindow::displayProgrammers(vector<person> programmers)
 {
     ui->table_programmers->clearContents();
@@ -93,8 +98,10 @@ void MainWindow::displayProgrammers(vector<person> programmers)
         person currentPerson = programmers[rowi];
 
         QString pname = QString::fromStdString(currentPerson.returnName());
+        QString pid = QString::number(currentPerson.returnId());
 
-        ui->table_realation_person->setItem(rowi, 0, new QTableWidgetItem(pname));
+        ui->table_realation_person->setItem(rowi, 1, new QTableWidgetItem(pname));
+        ui->table_realation_person->setItem(rowi, 0, new QTableWidgetItem(pid));
 
     }
 }
@@ -125,15 +132,34 @@ void MainWindow::displayComputers(vector<computer> computers)
         computer currentComputer = computers[rowi];
 
         QString cname = QString::fromStdString(currentComputer.returnComName());
+        QString cid = QString::number(currentComputer.returnId());
 
-        ui->table_realation_computers->setItem(rowi, 0, new QTableWidgetItem(cname));
+        ui->table_realation_computers->setItem(rowi, 1, new QTableWidgetItem(cname));
+        ui->table_realation_computers->setItem(rowi, 0, new QTableWidgetItem(cid));
 
     }
 
 
 }
 
+void MainWindow::displayRelations(vector<relations> relation)
+{
+    ui->table_relations->clearContents();
+    ui->table_relations->setRowCount(relation.size());
 
+    for(unsigned int row = 0; row < relation.size(); row++)
+    {
+        relations currentRelation = relation[row];
+
+        QString pname = QString::fromStdString(currentRelation.returnCname());
+        QString cname = QString::fromStdString(currentRelation.returnPname());
+
+
+        ui->table_relations->setItem(row, 0, new QTableWidgetItem(pname));
+        ui->table_relations->setItem(row, 1, new QTableWidgetItem(cname));
+    }
+
+}
 
 void MainWindow::on_button_add_scientist_clicked()
 {

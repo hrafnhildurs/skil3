@@ -62,6 +62,12 @@
         <property name="showGrid">
          <bool>false</bool>
         </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>145</number>
+        </attribute>
         <column>
          <property name="text">
           <string>Name</string>
@@ -384,6 +390,12 @@
         <property name="showGrid">
          <bool>false</bool>
         </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>145</number>
+        </attribute>
         <column>
          <property name="text">
           <string>Name</string>
@@ -570,7 +582,7 @@
        <attribute name="title">
         <string>Relations</string>
        </attribute>
-       <widget class="QTableWidget" name="table_ralarions">
+       <widget class="QTableWidget" name="table_relations">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -579,6 +591,28 @@
           <height>351</height>
          </rect>
         </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>true</bool>
+        </attribute>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>270</number>
+        </attribute>
+        <attribute name="horizontalHeaderStretchLastSection">
+         <bool>true</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>Scientist Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Computer Name</string>
+         </property>
+        </column>
        </widget>
        <widget class="QGroupBox" name="groupBox">
         <property name="geometry">
@@ -826,9 +860,23 @@
         <property name="showGrid">
          <bool>false</bool>
         </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>50</number>
+        </attribute>
         <attribute name="horizontalHeaderStretchLastSection">
          <bool>true</bool>
         </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
         <column>
          <property name="text">
           <string>Name</string>
@@ -851,11 +899,22 @@
          <bool>false</bool>
         </property>
         <property name="sortingEnabled">
-         <bool>false</bool>
+         <bool>true</bool>
         </property>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>50</number>
+        </attribute>
         <attribute name="horizontalHeaderStretchLastSection">
          <bool>true</bool>
         </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </column>
         <column>
          <property name="text">
           <string>Name</string>
@@ -973,7 +1032,7 @@
      <x>0</x>
      <y>0</y>
      <width>607</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

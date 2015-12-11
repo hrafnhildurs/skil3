@@ -52,6 +52,9 @@ private:
     void displaySearchComp(vector<computer> computers);
     void displaySearchCompRelation(vector<computer> computers);
 
+    void displayAllRelations();
+    void displayRelations(vector<relations> relation);
+
     Manager manager;
 
 private:

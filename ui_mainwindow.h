@@ -81,9 +81,9 @@ public:
     QLabel *label;
     QLabel *label_computer_error;
     QWidget *tab;
-    QTableWidget *tableWidget;
+    QTableWidget *table_relations;
     QGroupBox *groupBox;
-    QLineEdit *lineEdit;
+    QLineEdit *input_relationSearch;
     QGroupBox *groupBox_14;
     QComboBox *combo_programmers_2;
     QRadioButton *radioProgAsc_2;
@@ -152,6 +152,8 @@ public:
         table_programmers->setObjectName(QStringLiteral("table_programmers"));
         table_programmers->setGeometry(QRect(0, 170, 581, 291));
         table_programmers->setShowGrid(false);
+        table_programmers->setSortingEnabled(true);
+        table_programmers->horizontalHeader()->setDefaultSectionSize(145);
         groupBox_6 = new QGroupBox(tab_5);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(0, 10, 349, 159));
@@ -238,6 +240,8 @@ public:
         table_computers->setObjectName(QStringLiteral("table_computers"));
         table_computers->setGeometry(QRect(0, 170, 581, 291));
         table_computers->setShowGrid(false);
+        table_computers->setSortingEnabled(true);
+        table_computers->horizontalHeader()->setDefaultSectionSize(145);
         groupBox_8 = new QGroupBox(tab_6);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
         groupBox_8->setGeometry(QRect(0, 10, 349, 159));
@@ -280,15 +284,25 @@ public:
         tabWidget->addTab(tab_6, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
-        tableWidget = new QTableWidget(tab);
-        tableWidget->setObjectName(QStringLiteral("tableWidget"));
-        tableWidget->setGeometry(QRect(0, 170, 581, 351));
+        table_relations = new QTableWidget(tab);
+        if (table_relations->columnCount() < 2)
+            table_relations->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        table_relations->setHorizontalHeaderItem(0, __qtablewidgetitem8);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        table_relations->setHorizontalHeaderItem(1, __qtablewidgetitem9);
+        table_relations->setObjectName(QStringLiteral("table_relations"));
+        table_relations->setGeometry(QRect(0, 170, 581, 351));
+        table_relations->setSortingEnabled(true);
+        table_relations->horizontalHeader()->setCascadingSectionResizes(true);
+        table_relations->horizontalHeader()->setDefaultSectionSize(270);
+        table_relations->horizontalHeader()->setStretchLastSection(true);
         groupBox = new QGroupBox(tab);
         groupBox->setObjectName(QStringLiteral("groupBox"));
         groupBox->setGeometry(QRect(0, 10, 341, 161));
-        lineEdit = new QLineEdit(groupBox);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(10, 20, 321, 20));
+        input_relationSearch = new QLineEdit(groupBox);
+        input_relationSearch->setObjectName(QStringLiteral("input_relationSearch"));
+        input_relationSearch->setGeometry(QRect(10, 20, 321, 20));
         groupBox_14 = new QGroupBox(tab);
         groupBox_14->setObjectName(QStringLiteral("groupBox_14"));
         groupBox_14->setGeometry(QRect(340, 10, 229, 159));
@@ -344,25 +358,34 @@ public:
         combo_addRelationSortComp->setObjectName(QStringLiteral("combo_addRelationSortComp"));
         combo_addRelationSortComp->setGeometry(QRect(10, 20, 131, 22));
         table_realation_person = new QTableWidget(tab_7);
-        if (table_realation_person->columnCount() < 1)
-            table_realation_person->setColumnCount(1);
-        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
-        table_realation_person->setHorizontalHeaderItem(0, __qtablewidgetitem8);
+        if (table_realation_person->columnCount() < 2)
+            table_realation_person->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem10 = new QTableWidgetItem();
+        table_realation_person->setHorizontalHeaderItem(0, __qtablewidgetitem10);
+        QTableWidgetItem *__qtablewidgetitem11 = new QTableWidgetItem();
+        table_realation_person->setHorizontalHeaderItem(1, __qtablewidgetitem11);
         table_realation_person->setObjectName(QStringLiteral("table_realation_person"));
         table_realation_person->setGeometry(QRect(0, 130, 281, 331));
         table_realation_person->setShowGrid(false);
+        table_realation_person->setSortingEnabled(true);
+        table_realation_person->horizontalHeader()->setDefaultSectionSize(50);
         table_realation_person->horizontalHeader()->setStretchLastSection(true);
+        table_realation_person->verticalHeader()->setVisible(false);
         table_realation_computers = new QTableWidget(tab_7);
-        if (table_realation_computers->columnCount() < 1)
-            table_realation_computers->setColumnCount(1);
-        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
-        table_realation_computers->setHorizontalHeaderItem(0, __qtablewidgetitem9);
+        if (table_realation_computers->columnCount() < 2)
+            table_realation_computers->setColumnCount(2);
+        QTableWidgetItem *__qtablewidgetitem12 = new QTableWidgetItem();
+        table_realation_computers->setHorizontalHeaderItem(0, __qtablewidgetitem12);
+        QTableWidgetItem *__qtablewidgetitem13 = new QTableWidgetItem();
+        table_realation_computers->setHorizontalHeaderItem(1, __qtablewidgetitem13);
         table_realation_computers->setObjectName(QStringLiteral("table_realation_computers"));
         table_realation_computers->setGeometry(QRect(300, 130, 271, 331));
         table_realation_computers->setAutoFillBackground(false);
         table_realation_computers->setShowGrid(false);
-        table_realation_computers->setSortingEnabled(false);
+        table_realation_computers->setSortingEnabled(true);
+        table_realation_computers->horizontalHeader()->setDefaultSectionSize(50);
         table_realation_computers->horizontalHeader()->setStretchLastSection(true);
+        table_realation_computers->verticalHeader()->setVisible(false);
         tabWidget->addTab(tab_7, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
@@ -397,7 +420,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 607, 20));
+        menuBar->setGeometry(QRect(0, 0, 607, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -408,7 +431,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -465,6 +488,10 @@ public:
         label->setText(QString());
         label_computer_error->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "Computers", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = table_relations->horizontalHeaderItem(0);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Scientist Name", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = table_relations->horizontalHeaderItem(1);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "Computer Name", 0));
         groupBox->setTitle(QApplication::translate("MainWindow", "Search", 0));
         groupBox_14->setTitle(QApplication::translate("MainWindow", "Filter", 0));
         radioProgAsc_2->setText(QApplication::translate("MainWindow", "Ascending", 0));
@@ -479,10 +506,14 @@ public:
         label_15->setText(QApplication::translate("MainWindow", "Select what you want to connect", 0));
         groupBox_10->setTitle(QApplication::translate("MainWindow", "Sort scientists", 0));
         groupBox_11->setTitle(QApplication::translate("MainWindow", "Sort computers", 0));
-        QTableWidgetItem *___qtablewidgetitem8 = table_realation_person->horizontalHeaderItem(0);
-        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Name", 0));
-        QTableWidgetItem *___qtablewidgetitem9 = table_realation_computers->horizontalHeaderItem(0);
-        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "Name", 0));
+        QTableWidgetItem *___qtablewidgetitem10 = table_realation_person->horizontalHeaderItem(0);
+        ___qtablewidgetitem10->setText(QApplication::translate("MainWindow", "ID", 0));
+        QTableWidgetItem *___qtablewidgetitem11 = table_realation_person->horizontalHeaderItem(1);
+        ___qtablewidgetitem11->setText(QApplication::translate("MainWindow", "Name", 0));
+        QTableWidgetItem *___qtablewidgetitem12 = table_realation_computers->horizontalHeaderItem(0);
+        ___qtablewidgetitem12->setText(QApplication::translate("MainWindow", "ID", 0));
+        QTableWidgetItem *___qtablewidgetitem13 = table_realation_computers->horizontalHeaderItem(1);
+        ___qtablewidgetitem13->setText(QApplication::translate("MainWindow", "Name", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "Add relations", 0));
         groupBox_12->setTitle(QApplication::translate("MainWindow", "Search in database", 0));
         label_16->setText(QApplication::translate("MainWindow", "Search:", 0));
