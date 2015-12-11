@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -192,7 +192,7 @@
            <property name="title">
             <string>Filter</string>
            </property>
-           <widget class="QComboBox" name="comboBox">
+           <widget class="QComboBox" name="combo_programmers">
             <property name="geometry">
              <rect>
               <x>20</x>
@@ -202,7 +202,7 @@
              </rect>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_5">
+           <widget class="QRadioButton" name="radioProgAsc">
             <property name="geometry">
              <rect>
               <x>30</x>
@@ -215,7 +215,7 @@
              <string>Ascending</string>
             </property>
            </widget>
-           <widget class="QRadioButton" name="radioButton_6">
+           <widget class="QRadioButton" name="radioProgDesc">
             <property name="geometry">
              <rect>
               <x>120</x>
@@ -228,7 +228,7 @@
              <string>Descending</string>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton_5">
+           <widget class="QPushButton" name="button_filterProg">
             <property name="geometry">
              <rect>
               <x>120</x>
@@ -454,7 +454,7 @@
         <property name="title">
          <string>Filter</string>
         </property>
-        <widget class="QComboBox" name="comboBox_2">
+        <widget class="QComboBox" name="combo_computers">
          <property name="geometry">
           <rect>
            <x>20</x>
@@ -464,7 +464,7 @@
           </rect>
          </property>
         </widget>
-        <widget class="QRadioButton" name="radioButton_9">
+        <widget class="QRadioButton" name="radioCompAsc">
          <property name="geometry">
           <rect>
            <x>30</x>
@@ -477,7 +477,7 @@
           <string>Ascending</string>
          </property>
         </widget>
-        <widget class="QRadioButton" name="radioButton_10">
+        <widget class="QRadioButton" name="radioCompDesc">
          <property name="geometry">
           <rect>
            <x>120</x>
@@ -490,7 +490,7 @@
           <string>Descending</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_8">
+        <widget class="QPushButton" name="button_filterComp">
          <property name="geometry">
           <rect>
            <x>120</x>
@@ -834,7 +834,7 @@
              <string>Search:</string>
             </property>
            </widget>
-           <widget class="QLineEdit" name="lineEdit_13">
+           <widget class="QLineEdit" name="text_search">
             <property name="geometry">
              <rect>
               <x>50</x>
@@ -844,7 +844,7 @@
              </rect>
             </property>
            </widget>
-           <widget class="QPushButton" name="pushButton_11">
+           <widget class="QPushButton" name="button_search">
             <property name="geometry">
              <rect>
               <x>210</x>
@@ -872,7 +872,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QListView" name="listView_3"/>
+          <widget class="QListWidget" name="list_search"/>
          </item>
         </layout>
        </widget>
@@ -891,7 +891,7 @@
            <property name="title">
             <string>Filter</string>
            </property>
-           <widget class="QComboBox" name="comboBox_6">
+           <widget class="QComboBox" name="combo_search">
             <property name="geometry">
              <rect>
               <x>120</x>
@@ -929,7 +929,7 @@
      <x>0</x>
      <y>0</y>
      <width>607</width>
-     <height>21</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

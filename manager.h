@@ -18,6 +18,7 @@ public:
     vector<person> alphabeticSortAsc();
     vector<person> alphabeticSortDes();
     vector<person> birthYearSort();
+    vector<person> birthYearSortDesc();
     void deleteName(string name);
 
     // Search logic
@@ -29,6 +30,7 @@ public:
     vector<computer> computerSortAsc();
     vector<computer> computerSortDesc();
     vector<computer> computerSortYear();
+    vector<computer> computerSortYearDesc();
     vector<computer> searchComp(string searchWord);
     void deleteComputer(string name);
 

@@ -22,6 +22,24 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dropdown_computer_type->addItem("Mechanical");
     ui->dropdown_computer_type->addItem("PC");
     ui->dropdown_computer_type->addItem("Transistorized");
+
+    //dropdown menu for sort programmers
+    ui->combo_programmers->addItem("Name");
+    ui->combo_programmers->addItem("Birth year");
+    ui->radioProgAsc->setChecked(true);
+
+    //dropdown menu for sort computers
+    ui->combo_computers->addItem("Name");
+    ui->combo_computers->addItem("Year");
+    ui->radioCompAsc->setChecked(true);
+
+    //dropdown menu for search options
+    ui->combo_search->addItem("Scientists");
+    ui->combo_search->addItem("Computers");
+
+
+    //fixed window size
+    setFixedSize(620,600);
 }
 
 MainWindow::~MainWindow()
@@ -226,4 +244,101 @@ void MainWindow::on_button_add_computer_clicked()
     ui->radioButton_computer_built_no->setChecked(false);
 
 
+}
+
+void MainWindow::on_button_filterProg_clicked()
+{
+    QString currentSort = ui->combo_programmers->currentText();
+        bool ascChecked = ui->radioProgAsc->isChecked();
+        bool descChecked = ui->radioProgDesc->isChecked();
+
+        if(currentSort == "Name" && ascChecked)
+        {
+            vector<person> programmers = manager.alphabeticSortAsc();
+            displayProgrammers(programmers);
+        }
+        else if(currentSort == "Name" && descChecked)
+        {
+            vector<person> programmers = manager.alphabeticSortDes();
+            displayProgrammers(programmers);
+        }
+        else if(currentSort == "Birth year" && ascChecked)
+        {
+            vector<person> programmers = manager.birthYearSort();
+            displayProgrammers(programmers);
+        }
+        else if(currentSort == "Birth year" && descChecked)
+        {
+            vector<person> programmers = manager.birthYearSortDesc();
+            displayProgrammers(programmers);
+        }
+}
+
+void MainWindow::on_button_filterComp_clicked()
+{
+    QString currentSort = ui->combo_computers->currentText();
+        bool ascCheked = ui->radioCompAsc->isChecked();
+        bool descCheked = ui->radioCompDesc->isChecked();
+
+        if(currentSort == "Name" && ascCheked)
+        {
+            vector<computer> computers = manager.computerSortAsc();
+            displayComputers(computers);
+        }
+        else if(currentSort == "Name" && descCheked)
+        {
+            vector<computer> computers = manager.computerSortDesc();
+            displayComputers(computers);
+        }
+        else if(currentSort == "Year" && ascCheked)
+        {
+            vector<computer> computers = manager.computerSortYear();
+            displayComputers(computers);
+        }
+        else if(currentSort == "Year" && descCheked)
+        {
+            vector<computer> computers = manager.computerSortYearDesc();
+            displayComputers(computers);
+        }
+}
+
+void MainWindow::displaySearchProg(vector<person> programmers)
+{
+    ui->list_search->clear();
+
+    for(unsigned int i = 0; i < programmers.size(); i++)
+    {
+        person currentPerson = programmers[i];
+
+        ui->list_search->addItem(QString::fromStdString(currentPerson.returnName()));
+    }
+}
+
+void MainWindow::displaySearchComp(vector<computer> computers)
+{
+    ui->list_search->clear();
+
+    for(unsigned int i = 0; i < computers.size(); i++)
+    {
+        computer currentComputer = computers[i];
+
+        ui->list_search->addItem(QString::fromStdString(currentComputer.returnComName()));
+    }
+}
+
+void MainWindow::on_text_search_textChanged(const QString &arg1)
+{
+    QString currentSort = ui->combo_search->currentText();
+    QString currentWord = ui->text_search->text();
+
+    if(currentSort == "Scientists")
+    {
+        vector<person> programmers = manager.search(currentWord.toStdString());
+        displaySearchProg(programmers);
+    }
+    else if(currentSort == "Computers")
+    {
+        vector<computer> computers = manager.searchComp(currentWord.toStdString());
+        displaySearchComp(computers);
+    }
 }

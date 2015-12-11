@@ -41,6 +41,10 @@ vector<person> Manager::birthYearSort() {
     return db.pSortByBirthYear();
 }
 
+vector<person> Manager::birthYearSortDesc() {
+    return db.pSortByBirthYearDesc();
+}
+
 // Search function
 vector<person> Manager::search(string searchWord) {
     return db.search(searchWord);
@@ -71,6 +75,9 @@ vector<computer> Manager::computerSortDesc() {
 }
 vector<computer> Manager::computerSortYear() {
     return db.cSortYear();
+}
+vector<computer> Manager::computerSortYearDesc() {
+    return db.cSortYearDesc();
 }
 vector<computer> Manager::searchComp(string searchWord) {
     return db.searchComp(searchWord);

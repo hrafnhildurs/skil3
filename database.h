@@ -40,6 +40,7 @@ public:
     vector<person> pSortAlphAsc();
     vector<person> pSortAlphDes();
     vector<person> pSortByBirthYear();
+    vector<person> pSortByBirthYearDesc();
     vector<person> search(string searchWord);
 
     // Computer vectors with verious sorting preferences from database
@@ -47,6 +48,7 @@ public:
     vector<computer> cSortAsc();
     vector<computer> cSortDesc();
     vector<computer> cSortYear();
+    vector<computer> cSortYearDesc();
     vector<computer> searchComp(string searchWord);
 
     // Vector containing relations between computers and computer scientists
@@ -75,7 +77,7 @@ private:
     computer com;
     relations rel;
     QSqlDatabase db;
-    const QString DB_LOCATION = "C:\\Users\\Hrafnhildur\\Documents\\Skólinn\\Verklegt namskeid 1\\Vika3\\skil3\\programmers2.sqlite";
+    const QString DB_LOCATION = "C:\\Users\\IceVinking\\Documents\\GitHub\\skil3\\programmers2.sqlite";
 };
 
 #endif // DATABASE_H

@@ -112,6 +112,11 @@ vector<person> Database::pSortByBirthYear() {
     return writeToVector(query);
 }
 
+vector<person> Database::pSortByBirthYearDesc() {
+    QSqlQuery query("SELECT * FROM programmers ORDER BY birthYear DESC ");
+    return writeToVector(query);
+}
+
 vector<person> Database::search(string searchWord) {
     QSqlQuery query;
     QString search(searchWord.c_str());
@@ -208,6 +213,11 @@ vector<computer> Database::cSortDesc() {
 
 vector<computer> Database::cSortYear() {
     QSqlQuery query("SELECT * FROM computers ORDER BY year ASC");
+    return writeComToVector(query);
+}
+
+vector<computer> Database::cSortYearDesc() {
+    QSqlQuery query("SELECT * FROM computers ORDER BY year DESC");
     return writeComToVector(query);
 }
 
