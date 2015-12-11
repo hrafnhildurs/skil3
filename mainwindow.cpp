@@ -15,6 +15,8 @@ MainWindow::MainWindow(QWidget *parent) :
     displayAllProgrammers();
     displayAllComputers();
 
+    //dropdown menu for computer types
+    ui->dropdown_computer_type->addItem("");
     ui->dropdown_computer_type->addItem("Electronic");
     ui->dropdown_computer_type->addItem("Electromechanical");
     ui->dropdown_computer_type->addItem("Mechanical");
@@ -84,7 +86,7 @@ void MainWindow::on_button_add_scientist_clicked()
         ui->label_scientist_error->setText("<span style='color: #ff0000'>Input birthyear!</span>");
         error = true;
     }
-    if(yearBorn.length() > 4 || !yearBorn.toInt())
+    if(yearBorn.length() != 4 || !yearBorn.toInt())
     {
         ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid birthyear!</span>");
         error = true;
@@ -127,7 +129,7 @@ void MainWindow::on_button_add_scientist_clicked()
     }
     else if(yearDied != "")
     {
-        if(yearDied.length() > 4 || !yearDied.toInt())
+        if(yearDied.length() != 4 || !yearDied.toInt())
         {
             ui->label_scientist_error->setText("<span style='color: #ff0000'>Invalid deathyear!</span>");
             return;
@@ -182,7 +184,7 @@ void MainWindow::on_button_add_computer_clicked()
         ui->label_computer_error->setText("<span style='color: #ff0000'>Select type!</span>");
         isError = true;
     }
-    if(!year.toInt() || year.length() > 4)
+    if(!year.toInt() || year.length() != 4)
     {
         ui->label_computer_error->setText("<span style='color: #ff0000'>Invalid year!</span>");
         isError = true;
