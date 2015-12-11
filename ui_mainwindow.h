@@ -424,7 +424,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -438,9 +438,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem = table_programmers->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Name", 0));
         QTableWidgetItem *___qtablewidgetitem1 = table_programmers->horizontalHeaderItem(1);
-        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "New Column", 0));
+        ___qtablewidgetitem1->setText(QApplication::translate("MainWindow", "Gender", 0));
         QTableWidgetItem *___qtablewidgetitem2 = table_programmers->horizontalHeaderItem(2);
-        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Gender", 0));
+        ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Birth year", 0));
         QTableWidgetItem *___qtablewidgetitem3 = table_programmers->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Death year", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Add Scientist", 0));
