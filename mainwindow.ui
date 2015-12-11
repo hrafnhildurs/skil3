@@ -18,13 +18,20 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
+<<<<<<< Updated upstream
        <number>3</number>
+=======
+       <number>2</number>
+>>>>>>> Stashed changes
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
         <string>Scientists</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="button_remove_scientist">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -101,7 +108,7 @@
         <property name="title">
          <string>Add Scientist</string>
         </property>
-        <widget class="QLabel" name="label_2">
+        <widget class="QLabel" name="label_scientist_name">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -114,7 +121,7 @@
           <string>Name: </string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_3">
+        <widget class="QLabel" name="label_scientist_birth">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -127,7 +134,7 @@
           <string>Birth:</string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_4">
+        <widget class="QLabel" name="label_scientist_death">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -362,10 +369,13 @@
          </rect>
         </property>
         <property name="text">
-         <string>Seletect a Scientist to remove from database and push remove</string>
+         <string>Seletect a computer to remove from database and push remove</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_9">
+       <widget class="QPushButton" name="button_remove_computer">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -588,7 +598,7 @@
           <x>0</x>
           <y>170</y>
           <width>581</width>
-          <height>351</height>
+          <height>291</height>
          </rect>
         </property>
         <property name="sortingEnabled">
@@ -699,6 +709,53 @@
          </property>
         </widget>
        </widget>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="geometry">
+         <rect>
+          <x>-10</x>
+          <y>460</y>
+          <width>601</width>
+          <height>101</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string/>
+        </property>
+        <widget class="QPushButton" name="button_remove_relation">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>30</y>
+           <width>81</width>
+           <height>23</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Remove</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_remove_relation">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>10</y>
+           <width>341</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Select ID number you want to remove from database and push remove</string>
+         </property>
+        </widget>
+       </widget>
+       <zorder>table_relations</zorder>
+       <zorder>groupBox</zorder>
+       <zorder>groupBox_14</zorder>
+       <zorder>groupBox_2</zorder>
+       <zorder>groupBox_2</zorder>
       </widget>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">

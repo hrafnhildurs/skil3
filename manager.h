@@ -19,7 +19,7 @@ public:
     vector<person> alphabeticSortDes();
     vector<person> birthYearSort();
     vector<person> birthYearSortDesc();
-    void deleteName(string name);
+    void deleteName(person name);
 
     // Search logic
     vector<person> search(string searchWord);
@@ -32,13 +32,13 @@ public:
     vector<computer> computerSortYear();
     vector<computer> computerSortYearDesc();
     vector<computer> searchComp(string searchWord);
-    void deleteComputer(string name);
+    void deleteComputer(computer name);
 
     // Relations logic
     void addRelations(int pid, int cid);
     void addNamesRelations(int id, string p, string c);
     vector<relations> relation();
-    void deleteRelation(int id);
+    void deleteRelation(relations id);
 
 private:
     Database db;

@@ -38,13 +38,13 @@ public:
     QVBoxLayout *verticalLayout;
     QTabWidget *tabWidget;
     QWidget *tab_5;
-    QPushButton *pushButton_6;
+    QPushButton *button_remove_scientist;
     QLabel *label_5;
     QTableWidget *table_programmers;
     QGroupBox *groupBox_6;
-    QLabel *label_2;
-    QLabel *label_3;
-    QLabel *label_4;
+    QLabel *label_scientist_name;
+    QLabel *label_scientist_birth;
+    QLabel *label_scientist_death;
     QLineEdit *input_scientist_name;
     QLineEdit *input_scientist_birth;
     QLineEdit *input_scientist_death;
@@ -64,7 +64,7 @@ public:
     QRadioButton *radioCompDesc;
     QPushButton *button_filterComp;
     QLabel *label_9;
-    QPushButton *pushButton_9;
+    QPushButton *button_remove_computer;
     QTableWidget *table_computers;
     QGroupBox *groupBox_8;
     QLabel *label_6;
@@ -88,6 +88,9 @@ public:
     QRadioButton *radioProgAsc_2;
     QRadioButton *radioProgDesc_2;
     QPushButton *button_filterProg_2;
+    QGroupBox *groupBox_2;
+    QPushButton *button_remove_relation;
+    QLabel *label_remove_relation;
     QWidget *tab_7;
     QPushButton *pushButton_10;
     QLabel *label_11;
@@ -131,9 +134,10 @@ public:
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
-        pushButton_6 = new QPushButton(tab_5);
-        pushButton_6->setObjectName(QStringLiteral("pushButton_6"));
-        pushButton_6->setGeometry(QRect(10, 490, 81, 23));
+        button_remove_scientist = new QPushButton(tab_5);
+        button_remove_scientist->setObjectName(QStringLiteral("button_remove_scientist"));
+        button_remove_scientist->setEnabled(false);
+        button_remove_scientist->setGeometry(QRect(10, 490, 81, 23));
         label_5 = new QLabel(tab_5);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(10, 470, 311, 16));
@@ -156,15 +160,15 @@ public:
         groupBox_6 = new QGroupBox(tab_5);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(0, 10, 349, 159));
-        label_2 = new QLabel(groupBox_6);
-        label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(10, 30, 47, 13));
-        label_3 = new QLabel(groupBox_6);
-        label_3->setObjectName(QStringLiteral("label_3"));
-        label_3->setGeometry(QRect(10, 60, 47, 13));
-        label_4 = new QLabel(groupBox_6);
-        label_4->setObjectName(QStringLiteral("label_4"));
-        label_4->setGeometry(QRect(10, 90, 47, 13));
+        label_scientist_name = new QLabel(groupBox_6);
+        label_scientist_name->setObjectName(QStringLiteral("label_scientist_name"));
+        label_scientist_name->setGeometry(QRect(10, 30, 47, 13));
+        label_scientist_birth = new QLabel(groupBox_6);
+        label_scientist_birth->setObjectName(QStringLiteral("label_scientist_birth"));
+        label_scientist_birth->setGeometry(QRect(10, 60, 47, 13));
+        label_scientist_death = new QLabel(groupBox_6);
+        label_scientist_death->setObjectName(QStringLiteral("label_scientist_death"));
+        label_scientist_death->setGeometry(QRect(10, 90, 47, 13));
         input_scientist_name = new QLineEdit(groupBox_6);
         input_scientist_name->setObjectName(QStringLiteral("input_scientist_name"));
         input_scientist_name->setGeometry(QRect(50, 30, 271, 20));
@@ -222,9 +226,10 @@ public:
         label_9 = new QLabel(tab_6);
         label_9->setObjectName(QStringLiteral("label_9"));
         label_9->setGeometry(QRect(10, 470, 311, 16));
-        pushButton_9 = new QPushButton(tab_6);
-        pushButton_9->setObjectName(QStringLiteral("pushButton_9"));
-        pushButton_9->setGeometry(QRect(10, 490, 81, 23));
+        button_remove_computer = new QPushButton(tab_6);
+        button_remove_computer->setObjectName(QStringLiteral("button_remove_computer"));
+        button_remove_computer->setEnabled(false);
+        button_remove_computer->setGeometry(QRect(10, 490, 81, 23));
         table_computers = new QTableWidget(tab_6);
         if (table_computers->columnCount() < 4)
             table_computers->setColumnCount(4);
@@ -291,7 +296,7 @@ public:
         QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
         table_relations->setHorizontalHeaderItem(1, __qtablewidgetitem9);
         table_relations->setObjectName(QStringLiteral("table_relations"));
-        table_relations->setGeometry(QRect(0, 170, 581, 351));
+        table_relations->setGeometry(QRect(0, 170, 581, 291));
         table_relations->setSortingEnabled(true);
         table_relations->horizontalHeader()->setCascadingSectionResizes(true);
         table_relations->horizontalHeader()->setDefaultSectionSize(270);
@@ -317,7 +322,22 @@ public:
         button_filterProg_2 = new QPushButton(groupBox_14);
         button_filterProg_2->setObjectName(QStringLiteral("button_filterProg_2"));
         button_filterProg_2->setGeometry(QRect(120, 130, 81, 23));
+        groupBox_2 = new QGroupBox(tab);
+        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
+        groupBox_2->setGeometry(QRect(-10, 460, 601, 101));
+        button_remove_relation = new QPushButton(groupBox_2);
+        button_remove_relation->setObjectName(QStringLiteral("button_remove_relation"));
+        button_remove_relation->setEnabled(false);
+        button_remove_relation->setGeometry(QRect(20, 30, 81, 23));
+        label_remove_relation = new QLabel(groupBox_2);
+        label_remove_relation->setObjectName(QStringLiteral("label_remove_relation"));
+        label_remove_relation->setGeometry(QRect(20, 10, 341, 16));
         tabWidget->addTab(tab, QString());
+        table_relations->raise();
+        groupBox->raise();
+        groupBox_14->raise();
+        groupBox_2->raise();
+        groupBox_2->raise();
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
         pushButton_10 = new QPushButton(tab_7);
@@ -443,7 +463,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(4);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -452,7 +472,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        pushButton_6->setText(QApplication::translate("MainWindow", "Remove", 0));
+        button_remove_scientist->setText(QApplication::translate("MainWindow", "Remove", 0));
         label_5->setText(QApplication::translate("MainWindow", "Seletect a Scientist to remove from database and push remove", 0));
         QTableWidgetItem *___qtablewidgetitem = table_programmers->horizontalHeaderItem(0);
         ___qtablewidgetitem->setText(QApplication::translate("MainWindow", "Name", 0));
@@ -463,9 +483,9 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = table_programmers->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Death year", 0));
         groupBox_6->setTitle(QApplication::translate("MainWindow", "Add Scientist", 0));
-        label_2->setText(QApplication::translate("MainWindow", "Name: ", 0));
-        label_3->setText(QApplication::translate("MainWindow", "Birth:", 0));
-        label_4->setText(QApplication::translate("MainWindow", "Death: ", 0));
+        label_scientist_name->setText(QApplication::translate("MainWindow", "Name: ", 0));
+        label_scientist_birth->setText(QApplication::translate("MainWindow", "Birth:", 0));
+        label_scientist_death->setText(QApplication::translate("MainWindow", "Death: ", 0));
         button_add_scientist->setText(QApplication::translate("MainWindow", "Add", 0));
         button_scientist_male->setText(QApplication::translate("MainWindow", "Male", 0));
         button_scientist_female->setText(QApplication::translate("MainWindow", "Female", 0));
@@ -479,8 +499,8 @@ public:
         radioCompAsc->setText(QApplication::translate("MainWindow", "Ascending", 0));
         radioCompDesc->setText(QApplication::translate("MainWindow", "Descending", 0));
         button_filterComp->setText(QApplication::translate("MainWindow", "Filter", 0));
-        label_9->setText(QApplication::translate("MainWindow", "Seletect a Scientist to remove from database and push remove", 0));
-        pushButton_9->setText(QApplication::translate("MainWindow", "Remove", 0));
+        label_9->setText(QApplication::translate("MainWindow", "Seletect a computer to remove from database and push remove", 0));
+        button_remove_computer->setText(QApplication::translate("MainWindow", "Remove", 0));
         QTableWidgetItem *___qtablewidgetitem4 = table_computers->horizontalHeaderItem(0);
         ___qtablewidgetitem4->setText(QApplication::translate("MainWindow", "Name", 0));
         QTableWidgetItem *___qtablewidgetitem5 = table_computers->horizontalHeaderItem(1);
@@ -509,6 +529,9 @@ public:
         radioProgAsc_2->setText(QApplication::translate("MainWindow", "Ascending", 0));
         radioProgDesc_2->setText(QApplication::translate("MainWindow", "Descending", 0));
         button_filterProg_2->setText(QApplication::translate("MainWindow", "Filter", 0));
+        groupBox_2->setTitle(QString());
+        button_remove_relation->setText(QApplication::translate("MainWindow", "Remove", 0));
+        label_remove_relation->setText(QApplication::translate("MainWindow", "Select ID number you want to remove from database and push remove", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Relations", 0));
         pushButton_10->setText(QApplication::translate("MainWindow", "Connect", 0));
         label_11->setText(QApplication::translate("MainWindow", "Scientists", 0));

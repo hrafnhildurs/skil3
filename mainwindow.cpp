@@ -104,6 +104,7 @@ void MainWindow::displayProgrammers(vector<person> programmers)
         ui->table_realation_person->setItem(rowi, 0, new QTableWidgetItem(pid));
 
     }
+    currentlyDisplayedScientist = programmers;
 }
 void MainWindow::displayComputers(vector<computer> computers)
 {
@@ -139,7 +140,7 @@ void MainWindow::displayComputers(vector<computer> computers)
 
     }
 
-
+    currentlyDisplayedComputer = computers;
 }
 
 void MainWindow::displayRelations(vector<relations> relation)
@@ -158,7 +159,7 @@ void MainWindow::displayRelations(vector<relations> relation)
         ui->table_relations->setItem(row, 0, new QTableWidgetItem(pname));
         ui->table_relations->setItem(row, 1, new QTableWidgetItem(cname));
     }
-
+    currentlyDisplayedRelation = relation;
 }
 
 void MainWindow::on_button_add_scientist_clicked()
@@ -542,3 +543,80 @@ void MainWindow::on_combo_search_currentIndexChanged()
         displaySearchComp(computers);
     }
 }
+
+void MainWindow::on_table_programmers_cellClicked(int row, int column)
+{
+    if(column == 0)
+    {
+        ui->button_remove_scientist->setEnabled(true);
+    }
+    else
+    {
+        ui->button_remove_scientist->setEnabled(false);
+    }
+}
+
+void MainWindow::on_button_remove_scientist_clicked()
+{
+    int currentlySelectedScientistIndex = ui->table_programmers->currentIndex().row();
+
+    person currentlySelectedScientist = currentlyDisplayedScientist.at(currentlySelectedScientistIndex);
+
+    manager.deleteName(currentlySelectedScientist);
+
+    displayAllProgrammers();
+
+    ui->button_remove_scientist->setEnabled(false);
+
+}
+
+void MainWindow::on_table_computers_cellClicked(int row, int column)
+{
+    if(column == 0)
+    {
+        ui->button_remove_computer->setEnabled(true);
+    }
+    else
+    {
+        ui->button_remove_computer->setEnabled(false);
+    }
+}
+
+
+void MainWindow::on_button_remove_computer_clicked()
+{
+    int currentlySelectedComputerIndex = ui->table_computers->currentIndex().row();
+
+    computer currentlySelectedComputer = currentlyDisplayedComputer.at(currentlySelectedComputerIndex);
+
+    manager.deleteComputer(currentlySelectedComputer);
+
+    displayAllComputers();
+
+    ui->button_remove_computer->setEnabled(false);
+}
+
+void MainWindow::on_table_relations_cellClicked(int row, int column)
+{
+    if(column == 0)
+    {
+        ui->button_remove_relation->setEnabled(true);
+    }
+    else
+    {
+        ui->button_remove_relation->setEnabled(true);
+    }
+}
+
+void MainWindow::on_button_remove_relation_clicked()
+{
+    int currentlySelectedRelationIndex = ui->table_relations->currentIndex().row();
+
+    relations currentlySelectedRelation = currentlyDisplayedRelation.at(currentlySelectedRelationIndex);
+
+    manager.deleteRelation(currentlySelectedRelation);
+
+    displayAllRelations();
+}
+
+

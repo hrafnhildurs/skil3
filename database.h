@@ -55,9 +55,9 @@ public:
     vector<relations> relation();
 
     // Helper delete functions
-    void deleteName(string name);
-    void deleteComputer(string name);
-    void deleteRelation(int id);
+    void deleteName(person name);
+    void deleteComputer(computer name);
+    void deleteRelation(relations id);
 private:
     // Handles queries from manager class to obtain data from database
     // and writes corresponding data into a vector of object asked for
@@ -67,9 +67,9 @@ private:
     vector<relations> writeOutRelations(QSqlQuery query);
 
     // Handles deletion from the database
-    void deleteName(string name, bool db_ok);
-    void deleteComputer(string name, bool db_ok);
-    void deleteRelation(int id, bool db_ok);
+    void deleteName(person name, bool db_ok);
+    void deleteComputer(computer name, bool db_ok);
+    void deleteRelation(relations id, bool db_ok);
 
     // Private variables/objects owned by database class
     bool db_ok;
@@ -77,7 +77,10 @@ private:
     computer com;
     relations rel;
     QSqlDatabase db;
-    const QString DB_LOCATION = "C:\\Users\\IceVinking\\Documents\\GitHub\\skil3\\programmers2.sqlite";
+
+
+    const QString DB_LOCATION = "C:\\Users\\Hrafnhildur\\Documents\\Skólinn\\Verklegt namskeid 1\\Vika3\\skil3\\programmers2.sqlite";
+
 };
 
 #endif // DATABASE_H

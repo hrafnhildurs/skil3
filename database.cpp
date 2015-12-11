@@ -1,4 +1,5 @@
 #include "database.h"
+#include <sstream>
 
 Database::Database() {
     db = QSqlDatabase::addDatabase("QSQLITE");
@@ -155,44 +156,47 @@ vector<computer> Database::searchComp(string searchWord) {
     return writeComToVector(query);
 }
 
-void Database::deleteName(string name) {
+void Database::deleteName(person name) {
     deleteName(name, db_ok);
 }
-void Database::deleteComputer(string name) {
+void Database::deleteComputer(computer name) {
     deleteComputer(name, db_ok);
 }
-void Database::deleteRelation(int id) {
+void Database::deleteRelation(relations id) {
     deleteRelation(id, db_ok);
 }
 
-void Database::deleteName(string name, bool db_ok) {
+void Database::deleteName(person name, bool db_ok) {
     if(db_ok) {
-        QString nameToDel(name.c_str());
 
-        QSqlQuery query;
-        query.prepare("DELETE FROM programmers WHERE name = ?");
-        query.addBindValue(nameToDel);
-        query.exec();
+        QSqlQuery query(db);
+
+        stringstream query1;
+        query1 << "DELETE FROM programmers WHERE id = " << name.returnId();
+
+        query.exec(QString::fromStdString(query1.str()));
     }
 }
 
-void Database::deleteComputer(string name, bool db_ok) {
+void Database::deleteComputer(computer name, bool db_ok) {
     if(db_ok) {
-        QString nameToDel(name.c_str());
+        QSqlQuery query(db);
 
-        QSqlQuery query;
-        query.prepare("DELETE FROM computers WHERE name = ?");
-        query.addBindValue(nameToDel);
-        query.exec();
+        stringstream query1;
+        query1 << "DELETE FROM computers WHERE id = " << name.returnId();
+
+        query.exec(QString::fromStdString(query1.str()));
     }
 }
 
-void Database::deleteRelation(int id, bool db_ok) {
+void Database::deleteRelation(relations id, bool db_ok) {
     if(db_ok) {
-        QSqlQuery query;
-        query.prepare("DELETE FROM relation WHERE id = ?");
-        query.addBindValue(id);
-        query.exec();
+        QSqlQuery query(db);
+
+        stringstream query1;
+        query1 << "DELETE FROM relation WHERE id = " << id.returnRid();
+
+        query.exec(QString::fromStdString(query1.str()));
     }
 }
 

@@ -39,6 +39,18 @@ private slots:
 
     void on_combo_search_currentIndexChanged();
 
+    void on_table_programmers_cellClicked(int row, int column);
+
+    void on_button_remove_scientist_clicked();
+
+    void on_table_computers_cellClicked(int row, int column);
+
+    void on_button_remove_computer_clicked();
+
+    void on_table_relations_cellClicked(int row, int column);
+
+    void on_button_remove_relation_clicked();
+
 private:
     void on_button_View_clicked();
 
@@ -56,6 +68,10 @@ private:
     void displayRelations(vector<relations> relation);
 
     Manager manager;
+
+    vector<person> currentlyDisplayedScientist;
+    vector<computer> currentlyDisplayedComputer;
+    vector<relations> currentlyDisplayedRelation;
 
 private:
     Ui::MainWindow *ui;

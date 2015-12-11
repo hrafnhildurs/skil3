@@ -51,15 +51,15 @@ vector<person> Manager::search(string searchWord) {
 }
 
 // Delete name from database
-void Manager::deleteName(string name){
+void Manager::deleteName(person name){
     db.deleteName(name);
 }
 // Delete computer from database
-void Manager::deleteComputer(string name){
+void Manager::deleteComputer(computer name){
     db.deleteComputer(name);
 }
 
-void Manager::deleteRelation(int id){
+void Manager::deleteRelation(relations id){
     db.deleteRelation(id);
 }
 
