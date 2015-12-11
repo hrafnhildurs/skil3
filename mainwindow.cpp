@@ -438,8 +438,10 @@ void MainWindow::displaySearchCompRelation(vector<computer> computers)
         computer currentComputer = computers[rowi];
 
         QString cname = QString::fromStdString(currentComputer.returnComName());
+        QString cid = QString::number(currentComputer.returnId());
 
-        ui->table_realation_computers->setItem(rowi, 0, new QTableWidgetItem(cname));
+        ui->table_realation_computers->setItem(rowi, 0, new QTableWidgetItem(cid));
+        ui->table_realation_computers->setItem(rowi, 1, new QTableWidgetItem(cname));
 
     }
 }
@@ -451,11 +453,13 @@ void MainWindow::displaySearchProgRelation(vector<person> programmers)
 
     for(unsigned int rowi = 0; rowi < programmers.size(); rowi++)
     {
-        person currentPerson = programmers[rowi];
+        person currentProgrammer = programmers[rowi];
 
-        QString pname = QString::fromStdString(currentPerson.returnName());
+        QString name = QString::fromStdString(currentProgrammer.returnName());
+        QString id = QString::number(currentProgrammer.returnId());
 
-        ui->table_realation_person->setItem(rowi, 0, new QTableWidgetItem(pname));
+        ui->table_realation_person->setItem(rowi, 1, new QTableWidgetItem(name));
+        ui->table_realation_person->setItem(rowi, 0, new QTableWidgetItem(id));
 
     }
 }
