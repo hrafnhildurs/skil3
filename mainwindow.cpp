@@ -77,6 +77,18 @@ void MainWindow::displayProgrammers(vector<person> programmers)
         ui->table_programmers->setItem(row, 2, new QTableWidgetItem(birthyear));
         ui->table_programmers->setItem(row, 3, new QTableWidgetItem(deathyear));
     }
+    ui->table_realation_person->clearContents();
+    ui->table_realation_person->setRowCount(programmers.size());
+
+    for(unsigned int rowi = 0; rowi < programmers.size(); rowi++)
+    {
+        person currentPerson = programmers[rowi];
+
+        QString pname = QString::fromStdString(currentPerson.returnName());
+
+        ui->table_realation_person->setItem(rowi, 0, new QTableWidgetItem(pname));
+
+    }
 }
 void MainWindow::displayComputers(vector<computer> computers)
 {
@@ -97,7 +109,23 @@ void MainWindow::displayComputers(vector<computer> computers)
         ui->table_computers->setItem(row, 2, new QTableWidgetItem(type));
         ui->table_computers->setItem(row, 3, new QTableWidgetItem(built));
     }
+    ui->table_realation_computers->clearContents();
+    ui->table_realation_computers->setRowCount(computers.size());
+
+    for(unsigned int rowi = 0; rowi < computers.size(); rowi++)
+    {
+        computer currentComputer = computers[rowi];
+
+        QString cname = QString::fromStdString(currentComputer.returnComName());
+
+        ui->table_realation_computers->setItem(rowi, 0, new QTableWidgetItem(cname));
+
+    }
+
+
 }
+
+
 
 void MainWindow::on_button_add_scientist_clicked()
 {

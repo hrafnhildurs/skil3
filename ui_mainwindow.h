@@ -18,7 +18,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListView>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -99,8 +98,6 @@ public:
     QLabel *label_14;
     QLineEdit *lineEdit_12;
     QLabel *label_15;
-    QListView *listView;
-    QListView *listView_2;
     QGroupBox *groupBox_10;
     QComboBox *comboBox_4;
     QRadioButton *radioButton_11;
@@ -109,6 +106,8 @@ public:
     QComboBox *comboBox_5;
     QRadioButton *radioButton_12;
     QRadioButton *radioButton_13;
+    QTableWidget *table_realation_person;
+    QTableWidget *table_realation_computers;
     QWidget *tab_8;
     QGroupBox *groupBox_12;
     QLabel *label_16;
@@ -156,6 +155,7 @@ public:
         table_programmers->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         table_programmers->setObjectName(QStringLiteral("table_programmers"));
         table_programmers->setGeometry(QRect(0, 170, 581, 291));
+        table_programmers->setShowGrid(false);
         groupBox_6 = new QGroupBox(tab_5);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
         groupBox_6->setGeometry(QRect(0, 10, 349, 159));
@@ -241,6 +241,7 @@ public:
         table_computers->setHorizontalHeaderItem(3, __qtablewidgetitem7);
         table_computers->setObjectName(QStringLiteral("table_computers"));
         table_computers->setGeometry(QRect(0, 170, 581, 291));
+        table_computers->setShowGrid(false);
         groupBox_8 = new QGroupBox(tab_6);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
         groupBox_8->setGeometry(QRect(0, 10, 349, 159));
@@ -334,12 +335,6 @@ public:
         label_15 = new QLabel(tab_7);
         label_15->setObjectName(QStringLiteral("label_15"));
         label_15->setGeometry(QRect(410, 470, 161, 16));
-        listView = new QListView(tab_7);
-        listView->setObjectName(QStringLiteral("listView"));
-        listView->setGeometry(QRect(0, 130, 291, 329));
-        listView_2 = new QListView(tab_7);
-        listView_2->setObjectName(QStringLiteral("listView_2"));
-        listView_2->setGeometry(QRect(300, 130, 279, 329));
         groupBox_10 = new QGroupBox(tab_7);
         groupBox_10->setObjectName(QStringLiteral("groupBox_10"));
         groupBox_10->setGeometry(QRect(10, 10, 289, 59));
@@ -364,6 +359,26 @@ public:
         radioButton_13 = new QRadioButton(groupBox_11);
         radioButton_13->setObjectName(QStringLiteral("radioButton_13"));
         radioButton_13->setGeometry(QRect(200, 20, 82, 17));
+        table_realation_person = new QTableWidget(tab_7);
+        if (table_realation_person->columnCount() < 1)
+            table_realation_person->setColumnCount(1);
+        QTableWidgetItem *__qtablewidgetitem8 = new QTableWidgetItem();
+        table_realation_person->setHorizontalHeaderItem(0, __qtablewidgetitem8);
+        table_realation_person->setObjectName(QStringLiteral("table_realation_person"));
+        table_realation_person->setGeometry(QRect(0, 130, 281, 331));
+        table_realation_person->setShowGrid(false);
+        table_realation_person->horizontalHeader()->setStretchLastSection(true);
+        table_realation_computers = new QTableWidget(tab_7);
+        if (table_realation_computers->columnCount() < 1)
+            table_realation_computers->setColumnCount(1);
+        QTableWidgetItem *__qtablewidgetitem9 = new QTableWidgetItem();
+        table_realation_computers->setHorizontalHeaderItem(0, __qtablewidgetitem9);
+        table_realation_computers->setObjectName(QStringLiteral("table_realation_computers"));
+        table_realation_computers->setGeometry(QRect(300, 130, 271, 331));
+        table_realation_computers->setAutoFillBackground(false);
+        table_realation_computers->setShowGrid(false);
+        table_realation_computers->setSortingEnabled(false);
+        table_realation_computers->horizontalHeader()->setStretchLastSection(true);
         tabWidget->addTab(tab_7, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
@@ -409,7 +424,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(4);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -484,6 +499,10 @@ public:
         groupBox_11->setTitle(QApplication::translate("MainWindow", "Sort computers", 0));
         radioButton_12->setText(QApplication::translate("MainWindow", "ASC", 0));
         radioButton_13->setText(QApplication::translate("MainWindow", "DESC", 0));
+        QTableWidgetItem *___qtablewidgetitem8 = table_realation_person->horizontalHeaderItem(0);
+        ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Name", 0));
+        QTableWidgetItem *___qtablewidgetitem9 = table_realation_computers->horizontalHeaderItem(0);
+        ___qtablewidgetitem9->setText(QApplication::translate("MainWindow", "Name", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "Add relations", 0));
         groupBox_12->setTitle(QApplication::translate("MainWindow", "Search in database", 0));
         label_16->setText(QApplication::translate("MainWindow", "Search:", 0));
