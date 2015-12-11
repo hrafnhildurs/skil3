@@ -73,11 +73,15 @@ Makefile: skil3.pro C:/Qt/5.4/mingw491_32/mkspecs/win32-g++/qmake.conf C:/Qt/5.4
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_bluetooth.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_bluetooth_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_bootstrap_private.pri \
+		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_charts.pri \
+		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_charts_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_clucene_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_concurrent.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_concurrent_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_core.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_core_private.pri \
+		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_datavisualization.pri \
+		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_datavisualization_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_dbus.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_dbus_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_declarative.pri \
@@ -110,6 +114,8 @@ Makefile: skil3.pro C:/Qt/5.4/mingw491_32/mkspecs/win32-g++/qmake.conf C:/Qt/5.4
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_positioning_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_printsupport.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_printsupport_private.pri \
+		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_purchasing.pri \
+		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_purchasing_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_qml.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_qml_private.pri \
 		C:/Qt/5.4/mingw491_32/mkspecs/modules/qt_lib_qmldevtools_private.pri \
@@ -201,11 +207,15 @@ C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_axserver_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_bluetooth.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_bluetooth_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_bootstrap_private.pri:
+C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_charts.pri:
+C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_charts_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_clucene_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_concurrent.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_concurrent_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_core.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_core_private.pri:
+C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_datavisualization.pri:
+C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_datavisualization_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_dbus.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_dbus_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_declarative.pri:
@@ -238,6 +248,8 @@ C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_positioning.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_positioning_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_printsupport.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_printsupport_private.pri:
+C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_purchasing.pri:
+C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_purchasing_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_qml.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_qml_private.pri:
 C:\Qt\5.4\mingw491_32\mkspecs\modules\qt_lib_qmldevtools_private.pri:

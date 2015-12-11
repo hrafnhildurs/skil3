@@ -991,7 +991,7 @@
          <property name="geometry">
           <rect>
            <x>120</x>
-           <y>20</y>
+           <y>30</y>
            <width>121</width>
            <height>22</height>
           </rect>
@@ -1001,7 +1001,7 @@
          <property name="geometry">
           <rect>
            <x>10</x>
-           <y>20</y>
+           <y>30</y>
            <width>111</width>
            <height>16</height>
           </rect>
@@ -1011,15 +1011,44 @@
          </property>
         </widget>
        </widget>
-       <widget class="QListWidget" name="list_search">
+       <widget class="QTableWidget" name="table_search">
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>110</y>
-          <width>579</width>
-          <height>399</height>
+          <y>120</y>
+          <width>591</width>
+          <height>411</height>
          </rect>
         </property>
+        <attribute name="horizontalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>146</number>
+        </attribute>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>New Column</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Name</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Gender/Year</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Death year/Was it built</string>
+         </property>
+        </column>
        </widget>
       </widget>
      </widget>

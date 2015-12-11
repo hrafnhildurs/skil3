@@ -384,25 +384,47 @@ void MainWindow::on_button_filterComp_clicked()
 
 void MainWindow::displaySearchProg(vector<person> programmers)
 {
-    ui->list_search->clear();
+    ui->table_search->clearContents();
+    ui->table_search->setRowCount(programmers.size());
 
-    for(unsigned int i = 0; i < programmers.size(); i++)
+    for(unsigned int row = 0; row < programmers.size(); row++)
     {
-        person currentPerson = programmers[i];
+        person currentProgrammer = programmers[row];
 
-        ui->list_search->addItem(QString::fromStdString(currentPerson.returnName()));
+        QString sName = QString::fromStdString(currentProgrammer.returnName());
+        QString sGender = QString::fromStdString(currentProgrammer.returnSex());
+        QString sByear = QString::number(currentProgrammer.returnBirthYear());
+        QString sDyear = QString::number(currentProgrammer.returnDeathYear());
+
+        ui->table_search->setItem(row, 0, new QTableWidgetItem(sName));
+        ui->table_search->setItem(row, 1, new QTableWidgetItem(sGender));
+        ui->table_search->setItem(row, 2, new QTableWidgetItem(sByear));
+        ui->table_search->setItem(row, 3, new QTableWidgetItem(sDyear));
+
+
     }
 }
 
 void MainWindow::displaySearchComp(vector<computer> computers)
 {
-    ui->list_search->clear();
+    ui->table_search->clearContents();
+    ui->table_search->setRowCount(computers.size());
 
-    for(unsigned int i = 0; i < computers.size(); i++)
+    for(unsigned int row = 0; row < computers.size(); row++)
     {
-        computer currentComputer = computers[i];
+        computer currentComputer = computers[row];
 
-        ui->list_search->addItem(QString::fromStdString(currentComputer.returnComName()));
+        QString sName = QString::fromStdString(currentComputer.returnComName());
+        QString sYear = QString::number(currentComputer.returnComYear());
+        QString sType = QString::fromStdString(currentComputer.returnComType());
+        QString sBuilt = QString::fromStdString(currentComputer.returnComBuilt());
+
+        ui->table_search->setItem(row, 0, new QTableWidgetItem(sName));
+        ui->table_search->setItem(row, 1, new QTableWidgetItem(sYear));
+        ui->table_search->setItem(row, 2, new QTableWidgetItem(sType));
+        ui->table_search->setItem(row, 3, new QTableWidgetItem(sBuilt));
+
+
     }
 }
 

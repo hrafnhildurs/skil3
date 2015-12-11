@@ -18,7 +18,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -112,7 +111,7 @@ public:
     QGroupBox *groupBox_13;
     QComboBox *combo_search;
     QLabel *label_17;
-    QListWidget *list_search;
+    QTableWidget *table_search;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -406,13 +405,26 @@ public:
         groupBox_13->setGeometry(QRect(320, 10, 259, 109));
         combo_search = new QComboBox(groupBox_13);
         combo_search->setObjectName(QStringLiteral("combo_search"));
-        combo_search->setGeometry(QRect(120, 20, 121, 22));
+        combo_search->setGeometry(QRect(120, 30, 121, 22));
         label_17 = new QLabel(groupBox_13);
         label_17->setObjectName(QStringLiteral("label_17"));
-        label_17->setGeometry(QRect(10, 20, 111, 16));
-        list_search = new QListWidget(tab_8);
-        list_search->setObjectName(QStringLiteral("list_search"));
-        list_search->setGeometry(QRect(0, 110, 579, 399));
+        label_17->setGeometry(QRect(10, 30, 111, 16));
+        table_search = new QTableWidget(tab_8);
+        if (table_search->columnCount() < 4)
+            table_search->setColumnCount(4);
+        QTableWidgetItem *__qtablewidgetitem14 = new QTableWidgetItem();
+        table_search->setHorizontalHeaderItem(0, __qtablewidgetitem14);
+        QTableWidgetItem *__qtablewidgetitem15 = new QTableWidgetItem();
+        table_search->setHorizontalHeaderItem(1, __qtablewidgetitem15);
+        QTableWidgetItem *__qtablewidgetitem16 = new QTableWidgetItem();
+        table_search->setHorizontalHeaderItem(2, __qtablewidgetitem16);
+        QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
+        table_search->setHorizontalHeaderItem(3, __qtablewidgetitem17);
+        table_search->setObjectName(QStringLiteral("table_search"));
+        table_search->setGeometry(QRect(0, 120, 591, 411));
+        table_search->horizontalHeader()->setVisible(false);
+        table_search->horizontalHeader()->setDefaultSectionSize(146);
+        table_search->verticalHeader()->setVisible(false);
         tabWidget->addTab(tab_8, QString());
 
         verticalLayout->addWidget(tabWidget);
@@ -520,6 +532,14 @@ public:
         button_search->setText(QApplication::translate("MainWindow", "Search", 0));
         groupBox_13->setTitle(QApplication::translate("MainWindow", "Filter", 0));
         label_17->setText(QApplication::translate("MainWindow", "Scientist or computer:", 0));
+        QTableWidgetItem *___qtablewidgetitem14 = table_search->horizontalHeaderItem(0);
+        ___qtablewidgetitem14->setText(QApplication::translate("MainWindow", "New Column", 0));
+        QTableWidgetItem *___qtablewidgetitem15 = table_search->horizontalHeaderItem(1);
+        ___qtablewidgetitem15->setText(QApplication::translate("MainWindow", "Name", 0));
+        QTableWidgetItem *___qtablewidgetitem16 = table_search->horizontalHeaderItem(2);
+        ___qtablewidgetitem16->setText(QApplication::translate("MainWindow", "Gender/Year", 0));
+        QTableWidgetItem *___qtablewidgetitem17 = table_search->horizontalHeaderItem(3);
+        ___qtablewidgetitem17->setText(QApplication::translate("MainWindow", "Death year/Was it built", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("MainWindow", "Search", 0));
     } // retranslateUi
 
