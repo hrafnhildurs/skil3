@@ -633,3 +633,31 @@ void MainWindow::on_button_remove_relation_clicked()
 }
 
 
+
+void MainWindow::on_table_realation_person_clicked()
+{
+    if (ui->table_realation_computers->currentIndex().row() != -1)
+    {
+        ui->pushButton_10->setEnabled(true);
+    }
+}
+
+void MainWindow::on_table_realation_computers_clicked()
+{
+    if (ui->table_realation_person->currentIndex().row() != -1)
+    {
+        ui->pushButton_10->setEnabled(true);
+    }
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    int computerId = ui->table_realation_computers->item(ui->table_realation_computers->currentIndex().row(), 0)->text().toInt();
+    int personId = ui->table_realation_person->item(ui->table_realation_person->currentIndex().row(), 0)->text().toInt();
+
+    manager.addRelations(personId, computerId);
+
+    displayAllRelations();
+
+    ui->statusBar->showMessage("Successfully added relation", 1500);
+}

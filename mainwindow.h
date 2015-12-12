@@ -51,6 +51,12 @@ private slots:
 
     void on_button_remove_relation_clicked();
 
+    void on_table_realation_person_clicked();
+
+    void on_table_realation_computers_clicked();
+
+    void on_pushButton_10_clicked();
+
 private:
     void on_button_View_clicked();
 

@@ -19,7 +19,6 @@
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
        <number>3</number>
-       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -748,17 +747,15 @@
          </property>
         </widget>
        </widget>
-       <zorder>table_relations</zorder>
-       <zorder>groupBox</zorder>
-       <zorder>groupBox_14</zorder>
-       <zorder>groupBox_2</zorder>
-       <zorder>groupBox_2</zorder>
       </widget>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
         <string>Add relations</string>
        </attribute>
        <widget class="QPushButton" name="pushButton_10">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="geometry">
          <rect>
           <x>440</x>
@@ -911,6 +908,9 @@
           <height>331</height>
          </rect>
         </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
         <property name="showGrid">
          <bool>false</bool>
         </property>
@@ -948,6 +948,9 @@
         </property>
         <property name="autoFillBackground">
          <bool>false</bool>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
         </property>
         <property name="showGrid">
          <bool>false</bool>
@@ -1115,7 +1118,7 @@
      <x>0</x>
      <y>0</y>
      <width>607</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

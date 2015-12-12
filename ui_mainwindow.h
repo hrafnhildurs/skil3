@@ -333,15 +333,11 @@ public:
         label_remove_relation->setObjectName(QStringLiteral("label_remove_relation"));
         label_remove_relation->setGeometry(QRect(20, 10, 341, 16));
         tabWidget->addTab(tab, QString());
-        table_relations->raise();
-        groupBox->raise();
-        groupBox_14->raise();
-        groupBox_2->raise();
-        groupBox_2->raise();
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
         pushButton_10 = new QPushButton(tab_7);
         pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
+        pushButton_10->setEnabled(false);
         pushButton_10->setGeometry(QRect(440, 490, 131, 23));
         label_11 = new QLabel(tab_7);
         label_11->setObjectName(QStringLiteral("label_11"));
@@ -385,6 +381,7 @@ public:
         table_realation_person->setHorizontalHeaderItem(1, __qtablewidgetitem11);
         table_realation_person->setObjectName(QStringLiteral("table_realation_person"));
         table_realation_person->setGeometry(QRect(0, 130, 281, 331));
+        table_realation_person->setSelectionBehavior(QAbstractItemView::SelectRows);
         table_realation_person->setShowGrid(false);
         table_realation_person->setSortingEnabled(true);
         table_realation_person->horizontalHeader()->setDefaultSectionSize(50);
@@ -400,6 +397,7 @@ public:
         table_realation_computers->setObjectName(QStringLiteral("table_realation_computers"));
         table_realation_computers->setGeometry(QRect(300, 130, 271, 331));
         table_realation_computers->setAutoFillBackground(false);
+        table_realation_computers->setSelectionBehavior(QAbstractItemView::SelectRows);
         table_realation_computers->setShowGrid(false);
         table_realation_computers->setSortingEnabled(true);
         table_realation_computers->horizontalHeader()->setDefaultSectionSize(50);
@@ -452,7 +450,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 607, 20));
+        menuBar->setGeometry(QRect(0, 0, 607, 25));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -463,7 +461,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
