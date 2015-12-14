@@ -24,26 +24,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->dropdown_computer_type->addItem("PC");
     ui->dropdown_computer_type->addItem("Transistorized");
 
-    //dropdown menu for sort programmers
-    ui->combo_programmers->addItem("Name");
-    ui->combo_programmers->addItem("Birth year");
-    ui->radioProgAsc->setChecked(true);
-
-    //dropdown menu for sort computers
-    ui->combo_computers->addItem("Name");
-    ui->combo_computers->addItem("Year");
-    ui->radioCompAsc->setChecked(true);
-
     //dropdown menu for search options
     ui->combo_search->addItem("Scientists");
     ui->combo_search->addItem("Computers");
 
-    //dropdown menu for sort add relation
-    ui->combo_addRelationSortProg->addItem("Ascending");
-    ui->combo_addRelationSortProg->addItem("Descending");
-
-    ui->combo_addRelationSortComp->addItem("Ascending");
-    ui->combo_addRelationSortComp->addItem("Descending");
 
 
     //fixed window size
@@ -250,7 +234,6 @@ void MainWindow::on_button_add_scientist_clicked()
         ui->button_scientist_female->setAutoExclusive(false);
         ui->button_scientist_female->setChecked(false);
         ui->button_scientist_male->setChecked(false);
-
         displayAllProgrammers();
     }
     else
@@ -332,61 +315,8 @@ void MainWindow::on_button_add_computer_clicked()
 
 }
 
-void MainWindow::on_button_filterProg_clicked()
-{
-    QString currentSort = ui->combo_programmers->currentText();
-        bool ascChecked = ui->radioProgAsc->isChecked();
-        bool descChecked = ui->radioProgDesc->isChecked();
 
-        if(currentSort == "Name" && ascChecked)
-        {
-            vector<person> programmers = manager.alphabeticSortAsc();
-            displayProgrammers(programmers);
-        }
-        else if(currentSort == "Name" && descChecked)
-        {
-            vector<person> programmers = manager.alphabeticSortDes();
-            displayProgrammers(programmers);
-        }
-        else if(currentSort == "Birth year" && ascChecked)
-        {
-            vector<person> programmers = manager.birthYearSort();
-            displayProgrammers(programmers);
-        }
-        else if(currentSort == "Birth year" && descChecked)
-        {
-            vector<person> programmers = manager.birthYearSortDesc();
-            displayProgrammers(programmers);
-        }
-}
 
-void MainWindow::on_button_filterComp_clicked()
-{
-    QString currentSort = ui->combo_computers->currentText();
-        bool ascCheked = ui->radioCompAsc->isChecked();
-        bool descCheked = ui->radioCompDesc->isChecked();
-
-        if(currentSort == "Name" && ascCheked)
-        {
-            vector<computer> computers = manager.computerSortAsc();
-            displayComputers(computers);
-        }
-        else if(currentSort == "Name" && descCheked)
-        {
-            vector<computer> computers = manager.computerSortDesc();
-            displayComputers(computers);
-        }
-        else if(currentSort == "Year" && ascCheked)
-        {
-            vector<computer> computers = manager.computerSortYear();
-            displayComputers(computers);
-        }
-        else if(currentSort == "Year" && descCheked)
-        {
-            vector<computer> computers = manager.computerSortYearDesc();
-            displayComputers(computers);
-        }
-}
 
 void MainWindow::displaySearchProg(vector<person> programmers)
 {
@@ -501,38 +431,6 @@ void MainWindow::on_input_searchComp_textChanged()
     displaySearchCompRelation(computers);
 }
 
-void MainWindow::on_combo_addRelationSortProg_currentIndexChanged()
-{
-    QString currentText = ui->combo_addRelationSortProg->currentText();
-
-    if(currentText == "Ascending")
-    {
-        vector<person> programmers = manager.alphabeticSortAsc();
-        displayProgrammers(programmers);
-    }
-    else
-    {
-        vector<person> programmers = manager.alphabeticSortDes();
-        displayProgrammers(programmers);
-    }
-}
-
-void MainWindow::on_combo_addRelationSortComp_currentIndexChanged()
-{
-
-    QString currentText = ui->combo_addRelationSortComp->currentText();
-
-    if(currentText == "Ascending")
-    {
-        vector<computer> computers = manager.computerSortAsc();
-        displayComputers(computers);
-    }
-    else
-    {
-        vector<computer> computers = manager.computerSortDesc();
-        displayComputers(computers);
-    }
-}
 
 void MainWindow::on_combo_search_currentIndexChanged()
 {

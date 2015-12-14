@@ -33,10 +33,6 @@ private slots:
 
     void on_input_searchComp_textChanged();
 
-    void on_combo_addRelationSortProg_currentIndexChanged();
-
-    void on_combo_addRelationSortComp_currentIndexChanged();
-
     void on_combo_search_currentIndexChanged();
 
     void on_table_programmers_cellClicked(int row, int column);

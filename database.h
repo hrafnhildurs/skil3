@@ -79,7 +79,7 @@ private:
     QSqlDatabase db;
 
 
-    const QString DB_LOCATION = "C:\\Users\\Einir\\Documents\\GitHub\\Skil3\\skil3\\programmers2.sqlite";
+    const QString DB_LOCATION = "C:\\Users\\hivSteini\\Desktop\\Skil3\\skil3\\programmers2.sqlite";
 
 };
 
