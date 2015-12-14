@@ -135,46 +135,46 @@ public:
         QTableWidgetItem *__qtablewidgetitem3 = new QTableWidgetItem();
         table_programmers->setHorizontalHeaderItem(3, __qtablewidgetitem3);
         table_programmers->setObjectName(QStringLiteral("table_programmers"));
-        table_programmers->setGeometry(QRect(10, 150, 571, 311));
+        table_programmers->setGeometry(QRect(10, 140, 571, 321));
         table_programmers->setShowGrid(false);
         table_programmers->setSortingEnabled(true);
         table_programmers->horizontalHeader()->setDefaultSectionSize(132);
         groupBox_6 = new QGroupBox(tab_5);
         groupBox_6->setObjectName(QStringLiteral("groupBox_6"));
-        groupBox_6->setGeometry(QRect(10, 10, 571, 131));
+        groupBox_6->setGeometry(QRect(10, 10, 571, 121));
         label_scientist_name = new QLabel(groupBox_6);
         label_scientist_name->setObjectName(QStringLiteral("label_scientist_name"));
-        label_scientist_name->setGeometry(QRect(20, 30, 47, 16));
+        label_scientist_name->setGeometry(QRect(10, 30, 41, 16));
         label_scientist_birth = new QLabel(groupBox_6);
         label_scientist_birth->setObjectName(QStringLiteral("label_scientist_birth"));
-        label_scientist_birth->setGeometry(QRect(350, 30, 47, 16));
+        label_scientist_birth->setGeometry(QRect(350, 30, 41, 16));
         label_scientist_death = new QLabel(groupBox_6);
         label_scientist_death->setObjectName(QStringLiteral("label_scientist_death"));
-        label_scientist_death->setGeometry(QRect(350, 70, 47, 16));
+        label_scientist_death->setGeometry(QRect(350, 60, 41, 16));
         input_scientist_name = new QLineEdit(groupBox_6);
         input_scientist_name->setObjectName(QStringLiteral("input_scientist_name"));
-        input_scientist_name->setGeometry(QRect(60, 30, 271, 20));
+        input_scientist_name->setGeometry(QRect(50, 30, 281, 20));
         input_scientist_birth = new QLineEdit(groupBox_6);
         input_scientist_birth->setObjectName(QStringLiteral("input_scientist_birth"));
         input_scientist_birth->setGeometry(QRect(390, 30, 171, 20));
         input_scientist_death = new QLineEdit(groupBox_6);
         input_scientist_death->setObjectName(QStringLiteral("input_scientist_death"));
-        input_scientist_death->setGeometry(QRect(390, 70, 171, 20));
+        input_scientist_death->setGeometry(QRect(390, 60, 171, 20));
         button_add_scientist = new QPushButton(groupBox_6);
         button_add_scientist->setObjectName(QStringLiteral("button_add_scientist"));
-        button_add_scientist->setGeometry(QRect(480, 100, 81, 23));
+        button_add_scientist->setGeometry(QRect(480, 90, 81, 23));
         button_scientist_male = new QRadioButton(groupBox_6);
         button_scientist_male->setObjectName(QStringLiteral("button_scientist_male"));
-        button_scientist_male->setGeometry(QRect(80, 70, 61, 17));
+        button_scientist_male->setGeometry(QRect(80, 60, 61, 17));
         button_scientist_female = new QRadioButton(groupBox_6);
         button_scientist_female->setObjectName(QStringLiteral("button_scientist_female"));
-        button_scientist_female->setGeometry(QRect(140, 70, 61, 17));
+        button_scientist_female->setGeometry(QRect(140, 60, 61, 17));
         label_scientist_error = new QLabel(groupBox_6);
         label_scientist_error->setObjectName(QStringLiteral("label_scientist_error"));
-        label_scientist_error->setGeometry(QRect(260, 100, 211, 31));
+        label_scientist_error->setGeometry(QRect(260, 90, 211, 31));
         label_2 = new QLabel(groupBox_6);
         label_2->setObjectName(QStringLiteral("label_2"));
-        label_2->setGeometry(QRect(20, 70, 47, 16));
+        label_2->setGeometry(QRect(10, 60, 47, 16));
         tabWidget->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
@@ -390,7 +390,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -409,7 +409,7 @@ public:
         ___qtablewidgetitem2->setText(QApplication::translate("MainWindow", "Birth year", 0));
         QTableWidgetItem *___qtablewidgetitem3 = table_programmers->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("MainWindow", "Death year", 0));
-        groupBox_6->setTitle(QApplication::translate("MainWindow", "  Add Scientist", 0));
+        groupBox_6->setTitle(QApplication::translate("MainWindow", "Add Scientist", 0));
         label_scientist_name->setText(QApplication::translate("MainWindow", "Name: ", 0));
         label_scientist_birth->setText(QApplication::translate("MainWindow", "Birth:", 0));
         label_scientist_death->setText(QApplication::translate("MainWindow", "Death: ", 0));
