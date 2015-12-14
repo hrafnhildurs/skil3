@@ -171,7 +171,7 @@ public:
         button_scientist_female->setGeometry(QRect(140, 60, 61, 17));
         label_scientist_error = new QLabel(groupBox_6);
         label_scientist_error->setObjectName(QStringLiteral("label_scientist_error"));
-        label_scientist_error->setGeometry(QRect(260, 90, 211, 31));
+        label_scientist_error->setGeometry(QRect(120, 80, 211, 31));
         label_2 = new QLabel(groupBox_6);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 60, 47, 16));
@@ -239,7 +239,7 @@ public:
         label->setGeometry(QRect(240, 90, 231, 20));
         label_computer_error = new QLabel(groupBox_8);
         label_computer_error->setObjectName(QStringLiteral("label_computer_error"));
-        label_computer_error->setGeometry(QRect(300, 110, 171, 21));
+        label_computer_error->setGeometry(QRect(120, 90, 251, 21));
         tabWidget->addTab(tab_6, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
@@ -252,6 +252,7 @@ public:
         table_relations->setHorizontalHeaderItem(1, __qtablewidgetitem9);
         table_relations->setObjectName(QStringLiteral("table_relations"));
         table_relations->setGeometry(QRect(10, 70, 571, 391));
+        table_relations->setSelectionBehavior(QAbstractItemView::SelectRows);
         table_relations->setSortingEnabled(true);
         table_relations->horizontalHeader()->setCascadingSectionResizes(true);
         table_relations->horizontalHeader()->setDefaultSectionSize(270);
@@ -390,7 +391,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(2);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -447,7 +448,7 @@ public:
         groupBox->setTitle(QApplication::translate("MainWindow", "Search", 0));
         groupBox_2->setTitle(QString());
         button_remove_relation->setText(QApplication::translate("MainWindow", "Remove", 0));
-        label_remove_relation->setText(QApplication::translate("MainWindow", "Select ID number you want to remove from database and push remove", 0));
+        label_remove_relation->setText(QApplication::translate("MainWindow", "Select a row you want to remove from database and push remove", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Relations", 0));
         pushButton_10->setText(QApplication::translate("MainWindow", "Add relation", 0));
         label_11->setText(QApplication::translate("MainWindow", "Scientists", 0));

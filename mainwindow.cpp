@@ -505,7 +505,7 @@ void MainWindow::on_button_remove_computer_clicked()
 
 void MainWindow::on_table_relations_cellClicked(int row, int column)
 {
-    if(column == 0)
+    if(column)
     {
         ui->button_remove_relation->setEnabled(true);
     }

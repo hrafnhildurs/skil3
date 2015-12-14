@@ -14,6 +14,7 @@ public:
     // Person logic
     void addPersonAlive(string n, string s, int b);
     void addPersonDead(string n, string s, int b, int d);
+    void updateallperson(string n, string s, int b, int d);
     vector<person> asInserted();
     vector<person> alphabeticSortAsc();
     vector<person> alphabeticSortDes();
