@@ -22,7 +22,7 @@
     <item>
      <widget class="QTabWidget" name="Help_tab">
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <property name="usesScrollButtons">
        <bool>false</bool>
@@ -260,6 +260,45 @@
           <string>Gender:</string>
          </property>
         </widget>
+       </widget>
+       <widget class="QLabel" name="Digital_clock_scientist">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>470</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Clock</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="DateTime_scientist">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>470</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Date</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
@@ -506,6 +545,45 @@
          </property>
         </widget>
        </widget>
+       <widget class="QLabel" name="DateTime_computer">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>470</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Digital_clock_computer">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>470</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Clock</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab">
        <attribute name="icon">
@@ -616,6 +694,45 @@
          </property>
          <property name="text">
           <string>Select a row you want to remove from database and push remove</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="DateTime_relations">
+         <property name="geometry">
+          <rect>
+           <x>420</x>
+           <y>10</y>
+           <width>91</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Date</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Digital_clock_relations">
+         <property name="geometry">
+          <rect>
+           <x>520</x>
+           <y>10</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>8</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Clock</string>
          </property>
         </widget>
        </widget>
@@ -825,6 +942,45 @@
          </property>
         </widget>
        </widget>
+       <widget class="QLabel" name="DateTime_addrelations">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>470</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Digital_clock_addrelations">
+        <property name="geometry">
+         <rect>
+          <x>120</x>
+          <y>470</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Clock</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_8">
        <attribute name="icon">
@@ -912,7 +1068,7 @@
           <x>10</x>
           <y>90</y>
           <width>571</width>
-          <height>431</height>
+          <height>381</height>
          </rect>
         </property>
         <property name="showGrid">
@@ -948,6 +1104,45 @@
          </property>
         </column>
        </widget>
+       <widget class="QLabel" name="DateTime_search">
+        <property name="geometry">
+         <rect>
+          <x>410</x>
+          <y>480</y>
+          <width>91</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Date</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="Digital_clock_search">
+        <property name="geometry">
+         <rect>
+          <x>510</x>
+          <y>480</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>8</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Clock</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="icon">
@@ -975,7 +1170,7 @@
            <x>10</x>
            <y>20</y>
            <width>561</width>
-           <height>192</height>
+           <height>411</height>
           </rect>
          </property>
          <property name="cursor" stdset="0">
@@ -989,7 +1184,54 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'arial,sans-serif'; font-size:8pt; color:#212121; background-color:#ffffff;&quot;&gt;This program keeps track of the famous computer scientists and famous computers and the relationship between them . To add a new computer scientist go to Scientists tab and you'll see groupbox under the name Add scientist , fill out your name , gender , year of birth and death years , if applicable , and then click Add . The table below shows all the computer scientists&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;&quot;&gt;This program keeps track of famous computer scientists, famous computers and the relationship between them.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;&quot;&gt;To see list of computer scientists click the Scientists tab. The table displays all computer scientists. To add a new scientist to the list fill out name, gender, birth year and death year (if appropriate) of a person and click add. To remove from list, select scientist name and click remove below table.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;&quot;&gt;To see list of computers click the Computers tab .A table displays all computers in list. To add a new computer fill out name, type, year built (if appropriate) and state whether it has been built or not. To remove computer from list, select computer name and click remove below table.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;&quot;&gt;Computers can be linked to scientists in the relations tab. A table displays relations between scientists and computers. To add a relation click Add relations tab and link a computer to a scientist.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;&quot;&gt;To search the list of computers or scientists, click the Search tab.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="Digital_clock_information">
+         <property name="geometry">
+          <rect>
+           <x>510</x>
+           <y>440</y>
+           <width>71</width>
+           <height>21</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>8</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Clock</string>
+         </property>
+        </widget>
+        <widget class="QLabel" name="DateTime_information">
+         <property name="geometry">
+          <rect>
+           <x>410</x>
+           <y>440</y>
+           <width>91</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Date</string>
          </property>
         </widget>
        </widget>
@@ -1004,7 +1246,7 @@ p, li { white-space: pre-wrap; }
      <x>0</x>
      <y>0</y>
      <width>607</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

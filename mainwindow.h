@@ -58,6 +58,8 @@ private slots:
     
     void on_input_relationSearch_textChanged();
 
+    void showTime();
+
 private:
     void on_button_View_clicked();
 

@@ -54,6 +54,8 @@ public:
     QRadioButton *button_scientist_female;
     QLabel *label_scientist_error;
     QLabel *label_2;
+    QLabel *Digital_clock_scientist;
+    QLabel *DateTime_scientist;
     QWidget *tab_6;
     QLabel *label_9;
     QPushButton *button_remove_computer;
@@ -71,6 +73,8 @@ public:
     QRadioButton *radioButton_computer_built_no;
     QLabel *label;
     QLabel *label_computer_error;
+    QLabel *DateTime_computer;
+    QLabel *Digital_clock_computer;
     QWidget *tab;
     QTableWidget *table_relations;
     QGroupBox *groupBox;
@@ -78,6 +82,8 @@ public:
     QGroupBox *groupBox_2;
     QPushButton *button_remove_relation;
     QLabel *label_remove_relation;
+    QLabel *DateTime_relations;
+    QLabel *Digital_clock_relations;
     QWidget *tab_7;
     QPushButton *button_add_relations;
     QLabel *label_11;
@@ -90,6 +96,8 @@ public:
     QLabel *label_13;
     QLineEdit *input_searchComp;
     QLabel *label_14;
+    QLabel *DateTime_addrelations;
+    QLabel *Digital_clock_addrelations;
     QWidget *tab_8;
     QGroupBox *groupBox_12;
     QLabel *label_16;
@@ -98,9 +106,13 @@ public:
     QComboBox *combo_search;
     QLabel *label_17;
     QTableWidget *table_search;
+    QLabel *DateTime_search;
+    QLabel *Digital_clock_search;
     QWidget *tab_2;
     QGroupBox *groupBox_18;
     QTextBrowser *textBrowser;
+    QLabel *Digital_clock_information;
+    QLabel *DateTime_information;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -190,6 +202,21 @@ public:
         label_2 = new QLabel(groupBox_6);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 60, 47, 16));
+        Digital_clock_scientist = new QLabel(tab_5);
+        Digital_clock_scientist->setObjectName(QStringLiteral("Digital_clock_scientist"));
+        Digital_clock_scientist->setGeometry(QRect(510, 470, 71, 21));
+        QFont font;
+        font.setPointSize(8);
+        font.setBold(true);
+        font.setWeight(75);
+        Digital_clock_scientist->setFont(font);
+        DateTime_scientist = new QLabel(tab_5);
+        DateTime_scientist->setObjectName(QStringLiteral("DateTime_scientist"));
+        DateTime_scientist->setGeometry(QRect(410, 470, 91, 20));
+        QFont font1;
+        font1.setBold(true);
+        font1.setWeight(75);
+        DateTime_scientist->setFont(font1);
         Help_tab->addTab(tab_5, icon2, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
@@ -261,6 +288,14 @@ public:
         label_computer_error = new QLabel(groupBox_8);
         label_computer_error->setObjectName(QStringLiteral("label_computer_error"));
         label_computer_error->setGeometry(QRect(120, 90, 251, 21));
+        DateTime_computer = new QLabel(tab_6);
+        DateTime_computer->setObjectName(QStringLiteral("DateTime_computer"));
+        DateTime_computer->setGeometry(QRect(410, 470, 91, 20));
+        DateTime_computer->setFont(font1);
+        Digital_clock_computer = new QLabel(tab_6);
+        Digital_clock_computer->setObjectName(QStringLiteral("Digital_clock_computer"));
+        Digital_clock_computer->setGeometry(QRect(510, 470, 71, 21));
+        Digital_clock_computer->setFont(font);
         Help_tab->addTab(tab_6, icon4, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
@@ -297,6 +332,14 @@ public:
         label_remove_relation = new QLabel(groupBox_2);
         label_remove_relation->setObjectName(QStringLiteral("label_remove_relation"));
         label_remove_relation->setGeometry(QRect(20, 10, 341, 16));
+        DateTime_relations = new QLabel(groupBox_2);
+        DateTime_relations->setObjectName(QStringLiteral("DateTime_relations"));
+        DateTime_relations->setGeometry(QRect(420, 10, 91, 20));
+        DateTime_relations->setFont(font1);
+        Digital_clock_relations = new QLabel(groupBox_2);
+        Digital_clock_relations->setObjectName(QStringLiteral("Digital_clock_relations"));
+        Digital_clock_relations->setGeometry(QRect(520, 10, 71, 21));
+        Digital_clock_relations->setFont(font);
         Help_tab->addTab(tab, icon5, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
@@ -362,6 +405,14 @@ public:
         label_14 = new QLabel(groupBox_3);
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setGeometry(QRect(300, 20, 71, 21));
+        DateTime_addrelations = new QLabel(tab_7);
+        DateTime_addrelations->setObjectName(QStringLiteral("DateTime_addrelations"));
+        DateTime_addrelations->setGeometry(QRect(20, 470, 91, 20));
+        DateTime_addrelations->setFont(font1);
+        Digital_clock_addrelations = new QLabel(tab_7);
+        Digital_clock_addrelations->setObjectName(QStringLiteral("Digital_clock_addrelations"));
+        Digital_clock_addrelations->setGeometry(QRect(120, 470, 71, 21));
+        Digital_clock_addrelations->setFont(font);
         Help_tab->addTab(tab_7, icon6, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
@@ -395,11 +446,19 @@ public:
         QTableWidgetItem *__qtablewidgetitem17 = new QTableWidgetItem();
         table_search->setHorizontalHeaderItem(3, __qtablewidgetitem17);
         table_search->setObjectName(QStringLiteral("table_search"));
-        table_search->setGeometry(QRect(10, 90, 571, 431));
+        table_search->setGeometry(QRect(10, 90, 571, 381));
         table_search->setShowGrid(false);
         table_search->horizontalHeader()->setVisible(false);
         table_search->horizontalHeader()->setDefaultSectionSize(137);
         table_search->verticalHeader()->setVisible(false);
+        DateTime_search = new QLabel(tab_8);
+        DateTime_search->setObjectName(QStringLiteral("DateTime_search"));
+        DateTime_search->setGeometry(QRect(410, 480, 91, 20));
+        DateTime_search->setFont(font1);
+        Digital_clock_search = new QLabel(tab_8);
+        Digital_clock_search->setObjectName(QStringLiteral("Digital_clock_search"));
+        Digital_clock_search->setGeometry(QRect(510, 480, 71, 21));
+        Digital_clock_search->setFont(font);
         QIcon icon7;
         icon7.addFile(QStringLiteral(":/Icons/Icons/Search.png"), QSize(), QIcon::Normal, QIcon::Off);
         Help_tab->addTab(tab_8, icon7, QString());
@@ -410,9 +469,17 @@ public:
         groupBox_18->setGeometry(QRect(0, 10, 581, 491));
         textBrowser = new QTextBrowser(groupBox_18);
         textBrowser->setObjectName(QStringLiteral("textBrowser"));
-        textBrowser->setGeometry(QRect(10, 20, 561, 192));
+        textBrowser->setGeometry(QRect(10, 20, 561, 411));
         textBrowser->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
         textBrowser->setFrameShape(QFrame::NoFrame);
+        Digital_clock_information = new QLabel(groupBox_18);
+        Digital_clock_information->setObjectName(QStringLiteral("Digital_clock_information"));
+        Digital_clock_information->setGeometry(QRect(510, 440, 71, 21));
+        Digital_clock_information->setFont(font);
+        DateTime_information = new QLabel(groupBox_18);
+        DateTime_information->setObjectName(QStringLiteral("DateTime_information"));
+        DateTime_information->setGeometry(QRect(410, 440, 91, 20));
+        DateTime_information->setFont(font1);
         QIcon icon8;
         icon8.addFile(QStringLiteral("../../Info.png"), QSize(), QIcon::Normal, QIcon::Off);
         Help_tab->addTab(tab_2, icon8, QString());
@@ -433,7 +500,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        Help_tab->setCurrentIndex(3);
+        Help_tab->setCurrentIndex(5);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -461,6 +528,8 @@ public:
         button_scientist_female->setText(QApplication::translate("MainWindow", "Female", 0));
         label_scientist_error->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "Gender:", 0));
+        Digital_clock_scientist->setText(QApplication::translate("MainWindow", "Clock", 0));
+        DateTime_scientist->setText(QApplication::translate("MainWindow", "Date", 0));
         Help_tab->setTabText(Help_tab->indexOf(tab_5), QApplication::translate("MainWindow", "Scientists", 0));
         label_9->setText(QApplication::translate("MainWindow", "Seletect a computer to remove from database and push remove", 0));
         button_remove_computer->setText(QApplication::translate("MainWindow", "Remove", 0));
@@ -482,6 +551,8 @@ public:
         radioButton_computer_built_no->setText(QApplication::translate("MainWindow", "No", 0));
         label->setText(QString());
         label_computer_error->setText(QString());
+        DateTime_computer->setText(QApplication::translate("MainWindow", "Date", 0));
+        Digital_clock_computer->setText(QApplication::translate("MainWindow", "Clock", 0));
         Help_tab->setTabText(Help_tab->indexOf(tab_6), QApplication::translate("MainWindow", "Computers", 0));
         QTableWidgetItem *___qtablewidgetitem8 = table_relations->horizontalHeaderItem(0);
         ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Scientist Name", 0));
@@ -491,6 +562,8 @@ public:
         groupBox_2->setTitle(QString());
         button_remove_relation->setText(QApplication::translate("MainWindow", "Remove", 0));
         label_remove_relation->setText(QApplication::translate("MainWindow", "Select a row you want to remove from database and push remove", 0));
+        DateTime_relations->setText(QApplication::translate("MainWindow", "Date", 0));
+        Digital_clock_relations->setText(QApplication::translate("MainWindow", "Clock", 0));
         Help_tab->setTabText(Help_tab->indexOf(tab), QApplication::translate("MainWindow", "Relations", 0));
         button_add_relations->setText(QApplication::translate("MainWindow", "Add relation", 0));
         label_11->setText(QApplication::translate("MainWindow", "Scientists", 0));
@@ -507,6 +580,8 @@ public:
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Search", 0));
         label_13->setText(QApplication::translate("MainWindow", "In scientists", 0));
         label_14->setText(QApplication::translate("MainWindow", "In computers", 0));
+        DateTime_addrelations->setText(QApplication::translate("MainWindow", "Date", 0));
+        Digital_clock_addrelations->setText(QApplication::translate("MainWindow", "Clock", 0));
         Help_tab->setTabText(Help_tab->indexOf(tab_7), QApplication::translate("MainWindow", "Add relations", 0));
         groupBox_12->setTitle(QApplication::translate("MainWindow", "Search in database", 0));
         label_16->setText(QApplication::translate("MainWindow", "Search:", 0));
@@ -520,13 +595,28 @@ public:
         ___qtablewidgetitem16->setText(QApplication::translate("MainWindow", "Birth year/Type", 0));
         QTableWidgetItem *___qtablewidgetitem17 = table_search->horizontalHeaderItem(3);
         ___qtablewidgetitem17->setText(QApplication::translate("MainWindow", "Death year/Was it built", 0));
+        DateTime_search->setText(QApplication::translate("MainWindow", "Date", 0));
+        Digital_clock_search->setText(QApplication::translate("MainWindow", "Clock", 0));
         Help_tab->setTabText(Help_tab->indexOf(tab_8), QApplication::translate("MainWindow", "Search", 0));
         groupBox_18->setTitle(QApplication::translate("MainWindow", "Information about this software", 0));
         textBrowser->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\"><br /></span><span style=\" font-family:'arial,sans-serif'; font-size:8pt; color:#212121; background-color:#ffffff;\">This program keeps track of the famous computer scientists and famous computers and the relationship between them . To add a new computer scientist go to Scientists tab and you'll see groupbox under the name Add scientist , fill out your name , gender , year of birth and death years , if applicable , and then click Add . The table below shows all the computer scientists</span></p></body></html>", 0));
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;\">This program keeps track of famous computer scientists, famous computers and the relationship between them.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-blo"
+                        "ck-indent:0; text-indent:0px;\"><span style=\" font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;\">To see list of computer scientists click the Scientists tab. The table displays all computer scientists. To add a new scientist to the list fill out name, gender, birth year and death year (if appropriate) of a person and click add. To remove from list, select scientist name and click remove below table.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;\">To see list of computers click the Computers tab .A table displays all computers in list"
+                        ". To add a new computer fill out name, type, year built (if appropriate) and state whether it has been built or not. To remove computer from list, select computer name and click remove below table.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;\">Computers can be linked to scientists in the relations tab. A table displays relations between scientists and computers. To add a relation click Add relations tab and link a computer to a scientist.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; te"
+                        "xt-indent:0px; font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'helvetica,arial,sans-serif'; font-size:8pt; color:#373e4d; background-color:#fefefe;\">To search the list of computers or scientists, click the Search tab.</span></p></body></html>", 0));
+        Digital_clock_information->setText(QApplication::translate("MainWindow", "Clock", 0));
+        DateTime_information->setText(QApplication::translate("MainWindow", "Date", 0));
         Help_tab->setTabText(Help_tab->indexOf(tab_2), QApplication::translate("MainWindow", "Information", 0));
     } // retranslateUi
 

@@ -16,6 +16,20 @@ MainWindow::MainWindow(QWidget *parent) :
     displayAllComputers();
     displayAllRelations();
 
+
+    QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
+    timer->start();
+
+    QDate dateTime = QDate::currentDate();
+    QString dateTimetext = dateTime.toString();
+    ui->DateTime_scientist->setText(dateTimetext);
+    ui->DateTime_computer->setText(dateTimetext);
+    ui->DateTime_relations->setText(dateTimetext);
+    ui->DateTime_addrelations->setText(dateTimetext);
+    ui->DateTime_search->setText(dateTimetext);
+    ui->DateTime_information->setText(dateTimetext);
+
     //dropdown menu for computer types
     ui->dropdown_computer_type->addItem("");
     ui->dropdown_computer_type->addItem("Electronic");
@@ -37,6 +51,17 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::showTime() {
+    QTime time = QTime::currentTime();
+    QString time_text = time.toString("hh : mm : ss");
+    ui->Digital_clock_scientist->setText(time_text);
+    ui->Digital_clock_computer->setText(time_text);
+    ui->Digital_clock_relations->setText(time_text);
+    ui->Digital_clock_addrelations->setText(time_text);
+    ui->Digital_clock_search->setText(time_text);
+    ui->Digital_clock_information->setText(time_text);
 }
 
 void MainWindow::displayAllProgrammers()
