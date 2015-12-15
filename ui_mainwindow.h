@@ -481,7 +481,7 @@ public:
         DateTime_information->setGeometry(QRect(410, 440, 91, 20));
         DateTime_information->setFont(font1);
         QIcon icon8;
-        icon8.addFile(QStringLiteral("../../Info.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon8.addFile(QStringLiteral(":/Icons/Icons/Information-icon.png"), QSize(), QIcon::Normal, QIcon::Off);
         Help_tab->addTab(tab_2, icon8, QString());
 
         verticalLayout->addWidget(Help_tab);

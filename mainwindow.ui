@@ -1146,8 +1146,8 @@
       </widget>
       <widget class="QWidget" name="tab_2">
        <attribute name="icon">
-        <iconset>
-         <normaloff>../../Info.png</normaloff>../../Info.png</iconset>
+        <iconset resource="recources.qrc">
+         <normaloff>:/Icons/Icons/Information-icon.png</normaloff>:/Icons/Icons/Information-icon.png</iconset>
        </attribute>
        <attribute name="title">
         <string>Information</string>
