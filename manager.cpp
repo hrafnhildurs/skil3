@@ -2,13 +2,17 @@
 
 Manager::Manager() { }
 
-// Calls addPersonAlive() function in database class
+
 void Manager::addPersonAlive(string n, string s, int b) {
     db.addPersonAlive(n, s, b);
 }
-// Calls addPersonDead() function in database class
+
 void Manager::addPersonDead(string n, string s, int b, int d) {
     db.addPersonDead(n, s, b, d);
+}
+
+void Manager::updateallperson(string n, string s, int b, int d) {
+    db.UpdatePerson(n, s, b, d);
 }
 
 void Manager::addComputer(string cn, int cy, string ct, string cb) {
@@ -17,8 +21,13 @@ void Manager::addComputer(string cn, int cy, string ct, string cb) {
 void Manager::addRelations(int pid, int cid) {
     db.addRelations(pid, cid);
 }
+
 void Manager::addNamesRelations(int id, string p, string c) {
     db.addNamesRelations(id, p, c);
+}
+
+bool Manager::checkDuplicateRelations(int pid, int cid) {
+    db.checkDuplicateRelations(pid, cid);
 }
 
 
@@ -54,6 +63,17 @@ vector<person> Manager::search(string searchWord) {
 void Manager::deleteName(person name){
     db.deleteName(name);
 }
+
+void Manager::deleteNameRelations(int id)
+{
+    db.deleteNameRelations(id);
+}
+
+void Manager::deleteCompRelations(int id)
+{
+    db.deleteCompRelations(id);
+}
+
 // Delete computer from database
 void Manager::deleteComputer(computer name){
     db.deleteComputer(name);

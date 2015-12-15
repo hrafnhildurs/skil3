@@ -2,6 +2,7 @@
 #define DATABASE_H
 #include <iostream>
 #include <string>
+#include <cstddef>
 #include <vector>
 #include <algorithm>
 #include <cstdlib>
@@ -31,6 +32,8 @@ public:
     void addComputer(string cn, int cy, string ct, string cb);
     void addRelations(int pid, int cid);
     void addNamesRelations(int id, string p, string c);
+    bool checkDuplicateRelations(int pid, int cid);
+    void UpdatePerson(string n, string s, int b, int d);
 
     // Helper function to see if connection to database is ok.
     bool connectionOk();
@@ -54,10 +57,13 @@ public:
     // Vector containing relations between computers and computer scientists
     vector<relations> relation();
 
+
     // Helper delete functions
     void deleteName(person name);
     void deleteComputer(computer name);
     void deleteRelation(relations id);
+    void deleteNameRelations(int id);
+    void deleteCompRelations(int id);
 private:
     // Handles queries from manager class to obtain data from database
     // and writes corresponding data into a vector of object asked for
@@ -70,6 +76,8 @@ private:
     void deleteName(person name, bool db_ok);
     void deleteComputer(computer name, bool db_ok);
     void deleteRelation(relations id, bool db_ok);
+    void deleteNameRelations(int id, bool db_ok);
+    void deleteCompRelations(int id, bool db_ok);
 
     // Private variables/objects owned by database class
     bool db_ok;
@@ -79,7 +87,7 @@ private:
     QSqlDatabase db;
 
 
-    const QString DB_LOCATION = "C:\\Users\\Hrafnhildur\\Documents\\Skólinn\\Verklegt namskeid 1\\Vika3\\skil3\\programmers2.sqlite";
+    const QString DB_LOCATION = "C:\\Users\\Einir\\Documents\\GitHub\\Skil3\\skil3\\programmers2.sqlite";
 
 };
 

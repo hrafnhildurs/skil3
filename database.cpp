@@ -42,6 +42,18 @@ void Database::addPersonDead(string n, string s, int b, int d) {
     query.addBindValue(d);
     query.exec();
 }
+void Database::UpdatePerson(string n, string s, int b, int d) {
+    QString name(n.c_str());
+    QString sex(s.c_str());
+
+    QSqlQuery query;
+    query.prepare("UPDATE OR REPLACE INTO programmers VALUES(NULL, ?, ?, ?, ?)");
+    query.addBindValue(name);
+    query.addBindValue(sex);
+    query.addBindValue(b);
+    query.addBindValue(d);
+    query.exec();
+}
 
 void Database::addComputer(string cn, int cy, string ct, string cb) {
     QString cname(cn.c_str());
@@ -60,11 +72,22 @@ void Database::addComputer(string cn, int cy, string ct, string cb) {
 
 void Database::addRelations(int pid, int cid) {
     QSqlQuery query;
-
     query.prepare("INSERT INTO relation VALUES(NULL,?, ?)");
     query.addBindValue(cid);
     query.addBindValue(pid);
     query.exec();
+}
+
+bool Database::checkDuplicateRelations(int pid, int cid) {
+    QSqlQuery query;
+    query.prepare("SELECT * FROM relation WHERE programmers_id LIKE ? AND computers_id LIKE ?");
+    query.addBindValue(pid);
+    query.addBindValue(cid);
+    query.exec();
+    if(query.next()) {
+        return true;
+    }
+    return false;
 }
 
 void Database::addNamesRelations(int id, string p, string c) {
@@ -159,14 +182,27 @@ vector<computer> Database::searchComp(string searchWord) {
 void Database::deleteName(person name) {
     deleteName(name, db_ok);
 }
+
 void Database::deleteComputer(computer name) {
     deleteComputer(name, db_ok);
 }
+
 void Database::deleteRelation(relations id) {
     deleteRelation(id, db_ok);
 }
 
-void Database::deleteName(person name, bool db_ok) {
+void Database::deleteNameRelations(int id)
+{
+    deleteNameRelations(id, db_ok);
+}
+
+void Database::deleteCompRelations(int id)
+{
+    deleteCompRelations(id, db_ok);
+}
+
+void Database::deleteName(person name, bool db_ok)
+{
     if(db_ok) {
 
         QSqlQuery query(db);
@@ -178,7 +214,8 @@ void Database::deleteName(person name, bool db_ok) {
     }
 }
 
-void Database::deleteComputer(computer name, bool db_ok) {
+void Database::deleteComputer(computer name, bool db_ok)
+{
     if(db_ok) {
         QSqlQuery query(db);
 
@@ -189,7 +226,8 @@ void Database::deleteComputer(computer name, bool db_ok) {
     }
 }
 
-void Database::deleteRelation(relations id, bool db_ok) {
+void Database::deleteRelation(relations id, bool db_ok)
+{
     if(db_ok) {
         QSqlQuery query(db);
 
@@ -197,6 +235,26 @@ void Database::deleteRelation(relations id, bool db_ok) {
         query1 << "DELETE FROM relation WHERE id = " << id.returnRid();
 
         query.exec(QString::fromStdString(query1.str()));
+    }
+}
+
+void Database::deleteNameRelations(int id, bool db_ok)
+{
+    if (db_ok) {
+        QSqlQuery query;
+        query.prepare("DELETE FROM relation WHERE programmers_id = ?");
+        query.addBindValue(id);
+        query.exec();
+    }
+}
+
+void Database::deleteCompRelations(int id, bool db_ok)
+{
+    if (db_ok) {
+        QSqlQuery query;
+        query.prepare("DELETE FROM relation WHERE computers_id = ?");
+        query.addBindValue(id);
+        query.exec();
     }
 }
 

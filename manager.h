@@ -21,6 +21,8 @@ public:
     vector<person> birthYearSort();
     vector<person> birthYearSortDesc();
     void deleteName(person name);
+    void deleteNameRelations(int id);
+    void deleteCompRelations(int id);
 
     // Search logic
     vector<person> search(string searchWord);
@@ -40,6 +42,7 @@ public:
     void addNamesRelations(int id, string p, string c);
     vector<relations> relation();
     void deleteRelation(relations id);
+    bool checkDuplicateRelations(int pid, int cid);
 
 private:
     Database db;

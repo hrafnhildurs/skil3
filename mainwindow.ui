@@ -18,7 +18,7 @@
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -582,7 +582,7 @@
        <attribute name="title">
         <string>Add relations</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_10">
+       <widget class="QPushButton" name="button_add_relations">
         <property name="enabled">
          <bool>false</bool>
         </property>
@@ -905,7 +905,7 @@
      <x>0</x>
      <y>0</y>
      <width>607</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
   </widget>

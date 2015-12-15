@@ -467,9 +467,13 @@ void MainWindow::on_button_remove_scientist_clicked()
 
     manager.deleteName(currentlySelectedScientist);
 
+    manager.deleteNameRelations(currentlySelectedScientist.returnId());
+
     ui->statusBar->showMessage("Successfully removed scientist", 1500);
 
     displayAllProgrammers();
+
+    displayAllRelations();
 
     ui->button_remove_scientist->setEnabled(false);
 
@@ -496,9 +500,13 @@ void MainWindow::on_button_remove_computer_clicked()
 
     manager.deleteComputer(currentlySelectedComputer);
 
+    manager.deleteCompRelations(currentlySelectedComputer.returnId());
+
     ui->statusBar->showMessage("Successfully removed computer", 1500);
 
     displayAllComputers();
+
+    displayAllRelations();
 
     ui->button_remove_computer->setEnabled(false);
 }
@@ -553,9 +561,31 @@ void MainWindow::on_pushButton_10_clicked()
     int computerId = ui->table_realation_computers->item(ui->table_realation_computers->currentIndex().row(), 0)->text().toInt();
     int personId = ui->table_realation_person->item(ui->table_realation_person->currentIndex().row(), 0)->text().toInt();
 
-    manager.addRelations(personId, computerId);
+    if (!manager.checkDuplicateRelations(personId, computerId))
+    {
+        manager.addRelations(personId, computerId);
+        displayAllRelations();
+        ui->statusBar->showMessage("Successfully added relation", 1500);
+    }
+    else
+        ui->statusBar->showMessage("Relation already in database!", 1500);
+}
 
-    displayAllRelations();
-
-    ui->statusBar->showMessage("Successfully added relation", 1500);
+void MainWindow::on_table_programmers_itemDoubleClicked(QTableWidgetItem *item)
+{
+    switch (item->column()) 
+    {
+        case 1:
+            //manager.editName();
+            break;
+        case 2:
+            //manager.editGender();
+            break;
+        case 3:
+            //manager.editBirthYear();
+            break;
+        case 4:
+            //manager.editDeathYearI();
+            break;           
+    }
 }

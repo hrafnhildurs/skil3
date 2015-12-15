@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTableWidget>
 #include <vector>
 #include "manager.h"
 
@@ -23,9 +24,9 @@ private slots:
 
     void on_button_add_computer_clicked();
 
-    void on_button_filterProg_clicked();
+//    void on_button_filterProg_clicked();
 
-    void on_button_filterComp_clicked();
+//    void on_button_filterComp_clicked();
 
     void on_text_search_textChanged();
 
@@ -53,6 +54,8 @@ private slots:
 
     void on_pushButton_10_clicked();
 
+    void on_table_programmers_itemDoubleClicked(QTableWidgetItem *item);
+    
 private:
     void on_button_View_clicked();
 
@@ -75,7 +78,6 @@ private:
     vector<computer> currentlyDisplayedComputer;
     vector<relations> currentlyDisplayedRelation;
 
-private:
     Ui::MainWindow *ui;
 };
 
