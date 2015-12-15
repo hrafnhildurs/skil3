@@ -25,6 +25,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -36,7 +37,7 @@ class Ui_MainWindow
 public:
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout;
-    QTabWidget *tabWidget;
+    QTabWidget *Help_tab;
     QWidget *tab_5;
     QPushButton *button_remove_scientist;
     QLabel *label_5;
@@ -97,6 +98,9 @@ public:
     QComboBox *combo_search;
     QLabel *label_17;
     QTableWidget *table_search;
+    QWidget *tab_2;
+    QGroupBox *groupBox_18;
+    QTextBrowser *textBrowser;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -106,20 +110,27 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
         MainWindow->resize(607, 624);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/Icons/Icons/pTq6AraT9.png"), QSize(), QIcon::Normal, QIcon::Off);
+        MainWindow->setWindowIcon(icon);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout = new QVBoxLayout(centralWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
+        Help_tab = new QTabWidget(centralWidget);
+        Help_tab->setObjectName(QStringLiteral("Help_tab"));
+        Help_tab->setUsesScrollButtons(false);
         tab_5 = new QWidget();
         tab_5->setObjectName(QStringLiteral("tab_5"));
         button_remove_scientist = new QPushButton(tab_5);
         button_remove_scientist->setObjectName(QStringLiteral("button_remove_scientist"));
         button_remove_scientist->setEnabled(false);
         button_remove_scientist->setGeometry(QRect(10, 490, 81, 23));
+        QIcon icon1;
+        icon1.addFile(QStringLiteral(":/Icons/Icons/user_erase-512.png"), QSize(), QIcon::Normal, QIcon::Off);
+        button_remove_scientist->setIcon(icon1);
         label_5 = new QLabel(tab_5);
         label_5->setObjectName(QStringLiteral("label_5"));
         label_5->setGeometry(QRect(10, 470, 311, 16));
@@ -163,6 +174,10 @@ public:
         button_add_scientist = new QPushButton(groupBox_6);
         button_add_scientist->setObjectName(QStringLiteral("button_add_scientist"));
         button_add_scientist->setGeometry(QRect(480, 90, 81, 23));
+        button_add_scientist->setLayoutDirection(Qt::LeftToRight);
+        QIcon icon2;
+        icon2.addFile(QStringLiteral(":/Icons/Icons/user_add-512.png"), QSize(), QIcon::Normal, QIcon::Off);
+        button_add_scientist->setIcon(icon2);
         button_scientist_male = new QRadioButton(groupBox_6);
         button_scientist_male->setObjectName(QStringLiteral("button_scientist_male"));
         button_scientist_male->setGeometry(QRect(80, 60, 61, 17));
@@ -175,7 +190,7 @@ public:
         label_2 = new QLabel(groupBox_6);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setGeometry(QRect(10, 60, 47, 16));
-        tabWidget->addTab(tab_5, QString());
+        Help_tab->addTab(tab_5, icon2, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName(QStringLiteral("tab_6"));
         label_9 = new QLabel(tab_6);
@@ -185,6 +200,9 @@ public:
         button_remove_computer->setObjectName(QStringLiteral("button_remove_computer"));
         button_remove_computer->setEnabled(false);
         button_remove_computer->setGeometry(QRect(10, 490, 81, 23));
+        QIcon icon3;
+        icon3.addFile(QStringLiteral(":/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Cancel_Close_Remove_Delete_Disable_Cross_Discard-128.png"), QSize(), QIcon::Normal, QIcon::Off);
+        button_remove_computer->setIcon(icon3);
         table_computers = new QTableWidget(tab_6);
         if (table_computers->columnCount() < 4)
             table_computers->setColumnCount(4);
@@ -222,6 +240,9 @@ public:
         button_add_computer = new QPushButton(groupBox_8);
         button_add_computer->setObjectName(QStringLiteral("button_add_computer"));
         button_add_computer->setGeometry(QRect(480, 90, 81, 23));
+        QIcon icon4;
+        icon4.addFile(QStringLiteral(":/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Add_Create_Insert_Plus-512.png"), QSize(), QIcon::Normal, QIcon::Off);
+        button_add_computer->setIcon(icon4);
         dropdown_computer_type = new QComboBox(groupBox_8);
         dropdown_computer_type->setObjectName(QStringLiteral("dropdown_computer_type"));
         dropdown_computer_type->setGeometry(QRect(390, 30, 171, 22));
@@ -240,7 +261,7 @@ public:
         label_computer_error = new QLabel(groupBox_8);
         label_computer_error->setObjectName(QStringLiteral("label_computer_error"));
         label_computer_error->setGeometry(QRect(120, 90, 251, 21));
-        tabWidget->addTab(tab_6, QString());
+        Help_tab->addTab(tab_6, icon4, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         table_relations = new QTableWidget(tab);
@@ -270,16 +291,22 @@ public:
         button_remove_relation->setObjectName(QStringLiteral("button_remove_relation"));
         button_remove_relation->setEnabled(false);
         button_remove_relation->setGeometry(QRect(20, 30, 81, 23));
+        QIcon icon5;
+        icon5.addFile(QStringLiteral(":/Icons/Icons/Add_Link-512.png"), QSize(), QIcon::Normal, QIcon::Off);
+        button_remove_relation->setIcon(icon5);
         label_remove_relation = new QLabel(groupBox_2);
         label_remove_relation->setObjectName(QStringLiteral("label_remove_relation"));
         label_remove_relation->setGeometry(QRect(20, 10, 341, 16));
-        tabWidget->addTab(tab, QString());
+        Help_tab->addTab(tab, icon5, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
         button_add_relations = new QPushButton(tab_7);
         button_add_relations->setObjectName(QStringLiteral("button_add_relations"));
         button_add_relations->setEnabled(false);
         button_add_relations->setGeometry(QRect(440, 490, 141, 23));
+        QIcon icon6;
+        icon6.addFile(QStringLiteral(":/Icons/Icons/SEO_share-512.png"), QSize(), QIcon::Normal, QIcon::Off);
+        button_add_relations->setIcon(icon6);
         label_11 = new QLabel(tab_7);
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(10, 70, 47, 13));
@@ -335,7 +362,7 @@ public:
         label_14 = new QLabel(groupBox_3);
         label_14->setObjectName(QStringLiteral("label_14"));
         label_14->setGeometry(QRect(300, 20, 71, 21));
-        tabWidget->addTab(tab_7, QString());
+        Help_tab->addTab(tab_7, icon6, QString());
         tab_8 = new QWidget();
         tab_8->setObjectName(QStringLiteral("tab_8"));
         groupBox_12 = new QGroupBox(tab_8);
@@ -373,9 +400,24 @@ public:
         table_search->horizontalHeader()->setVisible(false);
         table_search->horizontalHeader()->setDefaultSectionSize(137);
         table_search->verticalHeader()->setVisible(false);
-        tabWidget->addTab(tab_8, QString());
+        QIcon icon7;
+        icon7.addFile(QStringLiteral(":/Icons/Icons/Search.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Help_tab->addTab(tab_8, icon7, QString());
+        tab_2 = new QWidget();
+        tab_2->setObjectName(QStringLiteral("tab_2"));
+        groupBox_18 = new QGroupBox(tab_2);
+        groupBox_18->setObjectName(QStringLiteral("groupBox_18"));
+        groupBox_18->setGeometry(QRect(0, 10, 581, 491));
+        textBrowser = new QTextBrowser(groupBox_18);
+        textBrowser->setObjectName(QStringLiteral("textBrowser"));
+        textBrowser->setGeometry(QRect(10, 20, 561, 192));
+        textBrowser->viewport()->setProperty("cursor", QVariant(QCursor(Qt::ArrowCursor)));
+        textBrowser->setFrameShape(QFrame::NoFrame);
+        QIcon icon8;
+        icon8.addFile(QStringLiteral("../../Info.png"), QSize(), QIcon::Normal, QIcon::Off);
+        Help_tab->addTab(tab_2, icon8, QString());
 
-        verticalLayout->addWidget(tabWidget);
+        verticalLayout->addWidget(Help_tab);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -391,7 +433,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(3);
+        Help_tab->setCurrentIndex(3);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -399,7 +441,7 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Computer scients", 0));
         button_remove_scientist->setText(QApplication::translate("MainWindow", "Remove", 0));
         label_5->setText(QApplication::translate("MainWindow", "Seletect a Scientist to remove from database and push remove", 0));
         QTableWidgetItem *___qtablewidgetitem = table_programmers->horizontalHeaderItem(0);
@@ -419,7 +461,7 @@ public:
         button_scientist_female->setText(QApplication::translate("MainWindow", "Female", 0));
         label_scientist_error->setText(QString());
         label_2->setText(QApplication::translate("MainWindow", "Gender:", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_5), QApplication::translate("MainWindow", "Scientists", 0));
+        Help_tab->setTabText(Help_tab->indexOf(tab_5), QApplication::translate("MainWindow", "Scientists", 0));
         label_9->setText(QApplication::translate("MainWindow", "Seletect a computer to remove from database and push remove", 0));
         button_remove_computer->setText(QApplication::translate("MainWindow", "Remove", 0));
         QTableWidgetItem *___qtablewidgetitem4 = table_computers->horizontalHeaderItem(0);
@@ -440,7 +482,7 @@ public:
         radioButton_computer_built_no->setText(QApplication::translate("MainWindow", "No", 0));
         label->setText(QString());
         label_computer_error->setText(QString());
-        tabWidget->setTabText(tabWidget->indexOf(tab_6), QApplication::translate("MainWindow", "Computers", 0));
+        Help_tab->setTabText(Help_tab->indexOf(tab_6), QApplication::translate("MainWindow", "Computers", 0));
         QTableWidgetItem *___qtablewidgetitem8 = table_relations->horizontalHeaderItem(0);
         ___qtablewidgetitem8->setText(QApplication::translate("MainWindow", "Scientist Name", 0));
         QTableWidgetItem *___qtablewidgetitem9 = table_relations->horizontalHeaderItem(1);
@@ -449,7 +491,7 @@ public:
         groupBox_2->setTitle(QString());
         button_remove_relation->setText(QApplication::translate("MainWindow", "Remove", 0));
         label_remove_relation->setText(QApplication::translate("MainWindow", "Select a row you want to remove from database and push remove", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Relations", 0));
+        Help_tab->setTabText(Help_tab->indexOf(tab), QApplication::translate("MainWindow", "Relations", 0));
         button_add_relations->setText(QApplication::translate("MainWindow", "Add relation", 0));
         label_11->setText(QApplication::translate("MainWindow", "Scientists", 0));
         label_12->setText(QApplication::translate("MainWindow", "Comptuers", 0));
@@ -465,7 +507,7 @@ public:
         groupBox_3->setTitle(QApplication::translate("MainWindow", "Search", 0));
         label_13->setText(QApplication::translate("MainWindow", "In scientists", 0));
         label_14->setText(QApplication::translate("MainWindow", "In computers", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_7), QApplication::translate("MainWindow", "Add relations", 0));
+        Help_tab->setTabText(Help_tab->indexOf(tab_7), QApplication::translate("MainWindow", "Add relations", 0));
         groupBox_12->setTitle(QApplication::translate("MainWindow", "Search in database", 0));
         label_16->setText(QApplication::translate("MainWindow", "Search:", 0));
         groupBox_13->setTitle(QApplication::translate("MainWindow", "Filter", 0));
@@ -478,7 +520,14 @@ public:
         ___qtablewidgetitem16->setText(QApplication::translate("MainWindow", "Birth year/Type", 0));
         QTableWidgetItem *___qtablewidgetitem17 = table_search->horizontalHeaderItem(3);
         ___qtablewidgetitem17->setText(QApplication::translate("MainWindow", "Death year/Was it built", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_8), QApplication::translate("MainWindow", "Search", 0));
+        Help_tab->setTabText(Help_tab->indexOf(tab_8), QApplication::translate("MainWindow", "Search", 0));
+        groupBox_18->setTitle(QApplication::translate("MainWindow", "Information about this software", 0));
+        textBrowser->setHtml(QApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\"><br /></span><span style=\" font-family:'arial,sans-serif'; font-size:8pt; color:#212121; background-color:#ffffff;\">This program keeps track of the famous computer scientists and famous computers and the relationship between them . To add a new computer scientist go to Scientists tab and you'll see groupbox under the name Add scientist , fill out your name , gender , year of birth and death years , if applicable , and then click Add . The table below shows all the computer scientists</span></p></body></html>", 0));
+        Help_tab->setTabText(Help_tab->indexOf(tab_2), QApplication::translate("MainWindow", "Information", 0));
     } // retranslateUi
 
 };

@@ -11,16 +11,27 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Computer scients</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="recources.qrc">
+    <normaloff>:/Icons/Icons/pTq6AraT9.png</normaloff>:/Icons/Icons/pTq6AraT9.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QTabWidget" name="tabWidget">
+     <widget class="QTabWidget" name="Help_tab">
       <property name="currentIndex">
        <number>3</number>
       </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
       <widget class="QWidget" name="tab_5">
+       <attribute name="icon">
+        <iconset resource="recources.qrc">
+         <normaloff>:/Icons/Icons/user_add-512.png</normaloff>:/Icons/Icons/user_add-512.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Scientists</string>
        </attribute>
@@ -38,6 +49,10 @@
         </property>
         <property name="text">
          <string>Remove</string>
+        </property>
+        <property name="icon">
+         <iconset resource="recources.qrc">
+          <normaloff>:/Icons/Icons/user_erase-512.png</normaloff>:/Icons/Icons/user_erase-512.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_5">
@@ -182,8 +197,15 @@
            <height>23</height>
           </rect>
          </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
          <property name="text">
           <string>Add</string>
+         </property>
+         <property name="icon">
+          <iconset resource="recources.qrc">
+           <normaloff>:/Icons/Icons/user_add-512.png</normaloff>:/Icons/Icons/user_add-512.png</iconset>
          </property>
         </widget>
         <widget class="QRadioButton" name="button_scientist_male">
@@ -241,6 +263,10 @@
        </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
+       <attribute name="icon">
+        <iconset resource="recources.qrc">
+         <normaloff>:/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Add_Create_Insert_Plus-512.png</normaloff>:/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Add_Create_Insert_Plus-512.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Computers</string>
        </attribute>
@@ -271,6 +297,10 @@
         </property>
         <property name="text">
          <string>Remove</string>
+        </property>
+        <property name="icon">
+         <iconset resource="recources.qrc">
+          <normaloff>:/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Cancel_Close_Remove_Delete_Disable_Cross_Discard-128.png</normaloff>:/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Cancel_Close_Remove_Delete_Disable_Cross_Discard-128.png</iconset>
         </property>
        </widget>
        <widget class="QTableWidget" name="table_computers">
@@ -395,6 +425,10 @@
          <property name="text">
           <string>Add</string>
          </property>
+         <property name="icon">
+          <iconset resource="recources.qrc">
+           <normaloff>:/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Add_Create_Insert_Plus-512.png</normaloff>:/Icons/Icons/Monitor_Display_Screen_Lcd_Computer_Desktop_Workstation_Pc_System_Add_Create_Insert_Plus-512.png</iconset>
+         </property>
         </widget>
         <widget class="QComboBox" name="dropdown_computer_type">
          <property name="geometry">
@@ -474,6 +508,10 @@
        </widget>
       </widget>
       <widget class="QWidget" name="tab">
+       <attribute name="icon">
+        <iconset resource="recources.qrc">
+         <normaloff>:/Icons/Icons/Add_Link-512.png</normaloff>:/Icons/Icons/Add_Link-512.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Relations</string>
        </attribute>
@@ -562,6 +600,10 @@
          <property name="text">
           <string>Remove</string>
          </property>
+         <property name="icon">
+          <iconset resource="recources.qrc">
+           <normaloff>:/Icons/Icons/Add_Link-512.png</normaloff>:/Icons/Icons/Add_Link-512.png</iconset>
+         </property>
         </widget>
         <widget class="QLabel" name="label_remove_relation">
          <property name="geometry">
@@ -579,6 +621,10 @@
        </widget>
       </widget>
       <widget class="QWidget" name="tab_7">
+       <attribute name="icon">
+        <iconset resource="recources.qrc">
+         <normaloff>:/Icons/Icons/SEO_share-512.png</normaloff>:/Icons/Icons/SEO_share-512.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Add relations</string>
        </attribute>
@@ -596,6 +642,10 @@
         </property>
         <property name="text">
          <string>Add relation</string>
+        </property>
+        <property name="icon">
+         <iconset resource="recources.qrc">
+          <normaloff>:/Icons/Icons/SEO_share-512.png</normaloff>:/Icons/Icons/SEO_share-512.png</iconset>
         </property>
        </widget>
        <widget class="QLabel" name="label_11">
@@ -777,6 +827,10 @@
        </widget>
       </widget>
       <widget class="QWidget" name="tab_8">
+       <attribute name="icon">
+        <iconset resource="recources.qrc">
+         <normaloff>:/Icons/Icons/Search.png</normaloff>:/Icons/Icons/Search.png</iconset>
+       </attribute>
        <attribute name="title">
         <string>Search</string>
        </attribute>
@@ -895,6 +949,51 @@
         </column>
        </widget>
       </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="icon">
+        <iconset>
+         <normaloff>../../Info.png</normaloff>../../Info.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Information</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox_18">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>10</y>
+          <width>581</width>
+          <height>491</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Information about this software</string>
+        </property>
+        <widget class="QTextBrowser" name="textBrowser">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>561</width>
+           <height>192</height>
+          </rect>
+         </property>
+         <property name="cursor" stdset="0">
+          <cursorShape>ArrowCursor</cursorShape>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="html">
+          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'arial,sans-serif'; font-size:8pt; color:#212121; background-color:#ffffff;&quot;&gt;This program keeps track of the famous computer scientists and famous computers and the relationship between them . To add a new computer scientist go to Scientists tab and you'll see groupbox under the name Add scientist , fill out your name , gender , year of birth and death years , if applicable , and then click Add . The table below shows all the computer scientists&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -920,6 +1019,8 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="recources.qrc"/>
+ </resources>
  <connections/>
 </ui>
