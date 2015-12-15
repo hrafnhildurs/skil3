@@ -261,19 +261,19 @@ void MainWindow::on_button_add_scientist_clicked()
     {
         ui->statusBar->showMessage("Successfully added scientist", 1500);
 
-        ui->input_scientist_name->setText("");
-        ui->input_scientist_birth->setText("");
-        ui->input_scientist_death->setText("");
-        ui->button_scientist_female->setAutoExclusive(false);
-        ui->button_scientist_female->setChecked(false);
-        ui->button_scientist_male->setChecked(false);
-        displayAllProgrammers();
     }
     else
     {
         ui->label_scientist_error->setText("<span style='color: #ff0000'>Add failed!</span>");
     }
 
+    ui->input_scientist_name->setText("");
+    ui->input_scientist_birth->setText("");
+    ui->input_scientist_death->setText("");
+    ui->button_scientist_female->setAutoExclusive(false);
+    ui->button_scientist_female->setChecked(false);
+    ui->button_scientist_male->setChecked(false);
+    displayAllProgrammers();
 }
 
 void MainWindow::on_button_add_computer_clicked()
