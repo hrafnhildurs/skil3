@@ -77,7 +77,57 @@ void Database::addRelations(int pid, int cid) {
     query.addBindValue(pid);
     query.exec();
 }
+bool Database::checkDuplicateScientist(string n, string s, int b) {
+    QSqlQuery query;
 
+    QString name(n.c_str());
+    QString sex(s.c_str());
+
+    query.prepare("SELECT * FROM programmers WHERE name LIKE ? AND sex LIKE ? AND birthYear LIKE ?");
+    query.addBindValue(name);
+    query.addBindValue(sex);
+    query.addBindValue(b);
+    query.exec();
+    if(query.next()) {
+        return true;
+    }
+    return false;
+}
+bool Database::checkDuplicateDeadScientist(string n, string s, int b, int d) {
+    QSqlQuery query;
+
+    QString name(n.c_str());
+    QString sex(s.c_str());
+
+    query.prepare("SELECT * FROM programmers WHERE name LIKE ? AND sex LIKE ? AND birthYear LIKE ? AND deathYear LIKE ?");
+    query.addBindValue(name);
+    query.addBindValue(sex);
+    query.addBindValue(b);
+    query.addBindValue(d);
+    query.exec();
+    if(query.next()) {
+        return true;
+    }
+    return false;
+}
+bool Database::checkDuplicateComputer(string cn, int cy, string ct, string cb) {
+    QSqlQuery query;
+
+    QString cname(cn.c_str());
+    QString ctype(ct.c_str());
+    QString cbuilt(cb.c_str());
+
+    query.prepare("SELECT * FROM computers WHERE name LIKE ? AND year LIKE ? AND type LIKE ? AND built LIKE ?");
+    query.addBindValue(cname);
+    query.addBindValue(cy);
+    query.addBindValue(ctype);
+    query.addBindValue(cbuilt);
+    query.exec();
+    if(query.next()) {
+        return true;
+    }
+    return false;
+}
 bool Database::checkDuplicateRelations(int pid, int cid) {
     QSqlQuery query;
     query.prepare("SELECT * FROM relation WHERE programmers_id LIKE ? AND computers_id LIKE ?");

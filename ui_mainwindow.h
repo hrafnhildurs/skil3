@@ -78,7 +78,7 @@ public:
     QPushButton *button_remove_relation;
     QLabel *label_remove_relation;
     QWidget *tab_7;
-    QPushButton *pushButton_10;
+    QPushButton *button_add_relations;
     QLabel *label_11;
     QLabel *label_12;
     QLabel *label_15;
@@ -276,10 +276,10 @@ public:
         tabWidget->addTab(tab, QString());
         tab_7 = new QWidget();
         tab_7->setObjectName(QStringLiteral("tab_7"));
-        pushButton_10 = new QPushButton(tab_7);
-        pushButton_10->setObjectName(QStringLiteral("pushButton_10"));
-        pushButton_10->setEnabled(false);
-        pushButton_10->setGeometry(QRect(440, 490, 141, 23));
+        button_add_relations = new QPushButton(tab_7);
+        button_add_relations->setObjectName(QStringLiteral("button_add_relations"));
+        button_add_relations->setEnabled(false);
+        button_add_relations->setGeometry(QRect(440, 490, 141, 23));
         label_11 = new QLabel(tab_7);
         label_11->setObjectName(QStringLiteral("label_11"));
         label_11->setGeometry(QRect(10, 70, 47, 13));
@@ -380,7 +380,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 607, 25));
+        menuBar->setGeometry(QRect(0, 0, 607, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -450,7 +450,7 @@ public:
         button_remove_relation->setText(QApplication::translate("MainWindow", "Remove", 0));
         label_remove_relation->setText(QApplication::translate("MainWindow", "Select a row you want to remove from database and push remove", 0));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "Relations", 0));
-        pushButton_10->setText(QApplication::translate("MainWindow", "Add relation", 0));
+        button_add_relations->setText(QApplication::translate("MainWindow", "Add relation", 0));
         label_11->setText(QApplication::translate("MainWindow", "Scientists", 0));
         label_12->setText(QApplication::translate("MainWindow", "Comptuers", 0));
         label_15->setText(QApplication::translate("MainWindow", "Select what you want to connect", 0));

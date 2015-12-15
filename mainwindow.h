@@ -52,7 +52,7 @@ private slots:
 
     void on_table_realation_computers_clicked();
 
-    void on_pushButton_10_clicked();
+    void on_button_add_relations_clicked();
 
     void on_table_programmers_itemDoubleClicked(QTableWidgetItem *item);
     

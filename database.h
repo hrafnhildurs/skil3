@@ -32,6 +32,9 @@ public:
     void addComputer(string cn, int cy, string ct, string cb);
     void addRelations(int pid, int cid);
     void addNamesRelations(int id, string p, string c);
+    bool checkDuplicateScientist(string n, string s, int b);
+    bool checkDuplicateDeadScientist(string n, string s, int b, int d);
+    bool checkDuplicateComputer(string cn, int cy, string ct, string cb);
     bool checkDuplicateRelations(int pid, int cid);
     void UpdatePerson(string n, string s, int b, int d);
 
@@ -87,7 +90,7 @@ private:
     QSqlDatabase db;
 
 
-    const QString DB_LOCATION = "C:\\Users\\Einir\\Documents\\GitHub\\Skil3\\skil3\\programmers2.sqlite";
+    const QString DB_LOCATION = "C:\\Users\\Hrafnhildur\\Documents\\Skólinn\\Verklegt namskeid 1\\Vika3\\Skil3\\programmers2.sqlite";
 
 };
 

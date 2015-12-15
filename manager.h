@@ -15,6 +15,9 @@ public:
     void addPersonAlive(string n, string s, int b);
     void addPersonDead(string n, string s, int b, int d);
     void updateallperson(string n, string s, int b, int d);
+    bool checkDuplicateScientist(string n, string s, int b);
+    bool checkDuplicateComputer(string cn, int cy, string ct, string cb);
+    bool checkDuplicateDeadScientist(string n, string s, int b, int d);
     vector<person> asInserted();
     vector<person> alphabeticSortAsc();
     vector<person> alphabeticSortDes();

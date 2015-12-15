@@ -25,6 +25,15 @@ void Manager::addRelations(int pid, int cid) {
 void Manager::addNamesRelations(int id, string p, string c) {
     db.addNamesRelations(id, p, c);
 }
+bool Manager::checkDuplicateScientist(string n, string s, int b) {
+    return db.checkDuplicateScientist(n, s, b);
+}
+bool Manager::checkDuplicateDeadScientist(string n, string s, int b, int d) {
+    return db.checkDuplicateDeadScientist(n, s, b, d);
+}
+bool Manager::checkDuplicateComputer(string cn, int cy, string ct, string cb) {
+    return db.checkDuplicateComputer(cn, cy, ct, cb);
+}
 
 bool Manager::checkDuplicateRelations(int pid, int cid) {
     return db.checkDuplicateRelations(pid, cid);

@@ -206,9 +206,12 @@ void MainWindow::on_button_add_scientist_clicked()
     bool success = false;
 
     if(yearDied == "")
-    {
-        manager.addPersonAlive(name.toStdString(),sex.toStdString(),yearBorn.toInt());
-        success = true;
+    {   if(!manager.checkDuplicateScientist(name.toStdString(),sex.toStdString(),yearBorn.toInt()))
+        {
+            manager.addPersonAlive(name.toStdString(),sex.toStdString(),yearBorn.toInt());
+        }
+        else
+            ui->statusBar->showMessage("Scientist already in database!", 1500);
     }
     else if(yearDied != "")
     {
@@ -219,8 +222,13 @@ void MainWindow::on_button_add_scientist_clicked()
         }
         else
         {
-        manager.addPersonDead(name.toStdString(),sex.toStdString(),yearBorn.toInt(),yearDied.toInt());
-        success = true;
+            if(!manager.checkDuplicateDeadScientist(name.toStdString(),sex.toStdString(),yearBorn.toInt(),yearDied.toInt()))
+            {
+                manager.addPersonDead(name.toStdString(),sex.toStdString(),yearBorn.toInt(),yearDied.toInt());
+                success = true;
+            }
+            else
+                ui->statusBar->showMessage("Scientist already in database!", 1500);
         }
     }
 
@@ -299,10 +307,16 @@ void MainWindow::on_button_add_computer_clicked()
     }
 
 
-    manager.addComputer(name.toStdString(),year.toInt(),type.toStdString(),was_built.toStdString());
-
-    ui->statusBar->showMessage("Successfully added computer", 1500);
-
+    if(!manager.checkDuplicateComputer(name.toStdString(),year.toInt(),type.toStdString(),was_built.toStdString()))
+    {
+        manager.addComputer(name.toStdString(),year.toInt(),type.toStdString(),was_built.toStdString());
+        ui->statusBar->showMessage("Successfully added computer", 1500);
+    }
+    else if(manager.checkDuplicateComputer(name.toStdString(),year.toInt(),type.toStdString(),was_built.toStdString()))
+    {
+        ui->label_computer_error->setText("<span style='color: #ff0000'>Add faild!</span>");
+        ui->statusBar->showMessage("Computer already in database!", 1500);
+    }
     displayAllComputers();
 
     ui->input_computer_name->setText("");
@@ -312,11 +326,7 @@ void MainWindow::on_button_add_computer_clicked()
     ui->radioButton_computer_built_yes->setChecked(false);
     ui->radioButton_computer_built_no->setChecked(false);
 
-
 }
-
-
-
 
 void MainWindow::displaySearchProg(vector<person> programmers)
 {
@@ -544,7 +554,7 @@ void MainWindow::on_table_realation_person_clicked()
 {
     if (ui->table_realation_computers->currentIndex().row() != -1)
     {
-        ui->pushButton_10->setEnabled(true);
+        ui->button_add_relations->setEnabled(true);
     }
 }
 
@@ -552,11 +562,11 @@ void MainWindow::on_table_realation_computers_clicked()
 {
     if (ui->table_realation_person->currentIndex().row() != -1)
     {
-        ui->pushButton_10->setEnabled(true);
+        ui->button_add_relations->setEnabled(true);
     }
 }
 
-void MainWindow::on_pushButton_10_clicked()
+void MainWindow::on_button_add_relations_clicked()
 {
     int computerId = ui->table_realation_computers->item(ui->table_realation_computers->currentIndex().row(), 0)->text().toInt();
     int personId = ui->table_realation_person->item(ui->table_realation_person->currentIndex().row(), 0)->text().toInt();
