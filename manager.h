@@ -46,6 +46,7 @@ public:
     vector<relations> relation();
     void deleteRelation(relations id);
     bool checkDuplicateRelations(int pid, int cid);
+    vector<relations> searchRelation(string searchWord);
 
 private:
     Database db;

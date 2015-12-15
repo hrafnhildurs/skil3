@@ -39,6 +39,10 @@ bool Manager::checkDuplicateRelations(int pid, int cid) {
     return db.checkDuplicateRelations(pid, cid);
 }
 
+vector<relations> Manager::searchRelation(string searchWord){
+    return db.searchRelation(searchWord);
+}
+
 
 // Prints the list ordered by time inserted
 vector<person> Manager::asInserted() {

@@ -56,6 +56,8 @@ private slots:
 
     void on_table_programmers_itemDoubleClicked(QTableWidgetItem *item);
     
+    void on_input_relationSearch_textChanged();
+
 private:
     void on_button_View_clicked();
 
@@ -71,6 +73,7 @@ private:
 
     void displayAllRelations();
     void displayRelations(vector<relations> relation);
+    void displaySearchRelation(vector<relations> relation);
 
     Manager manager;
 

@@ -410,6 +410,23 @@ void MainWindow::displaySearchProgRelation(vector<person> programmers)
     }
 }
 
+void MainWindow::displaySearchRelation(vector<relations> relation)
+{
+    ui->table_relations->clearContents();
+    ui->table_relations->setRowCount(relation.size());
+
+    for(unsigned int rowi = 0; rowi < relation.size(); rowi++)
+    {
+        relations currentRelation = relation[rowi];
+
+        QString rPname = QString::fromStdString(currentRelation.returnPname());
+        QString rCname = QString::fromStdString(currentRelation.returnCname());
+
+        ui->table_relations->setItem(rowi, 0, new QTableWidgetItem(rPname));
+        ui->table_relations->setItem(rowi, 1, new QTableWidgetItem(rCname));
+    }
+}
+
 void MainWindow::on_text_search_textChanged()
 {
     QString currentSort = ui->combo_search->currentText();
@@ -439,6 +456,13 @@ void MainWindow::on_input_searchComp_textChanged()
     QString currentWord = ui->input_searchComp->text();
     vector<computer> computers = manager.searchComp(currentWord.toStdString());
     displaySearchCompRelation(computers);
+}
+
+void MainWindow::on_input_relationSearch_textChanged()
+{
+    QString currentWord = ui->input_relationSearch->text();
+    vector<relations> relation = manager.searchRelation(currentWord.toStdString());
+    displaySearchRelation(relation);
 }
 
 

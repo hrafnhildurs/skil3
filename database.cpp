@@ -338,6 +338,16 @@ vector<relations> Database::relation() {
     return writeOutRelations(query);
 }
 
+vector<relations> Database::searchRelation(string searchWord)
+{
+    QSqlQuery query;
+    QString search(searchWord.c_str());
+    query.prepare("SELECT r.id, p.name, c.name FROM relation r JOIN programmers p ON r.programmers_id = p.id JOIN computers c ON r.computers_id = c.id WHERE p.name LIKE '%' || ? || '%' ");
+    query.addBindValue(search);
+    query.exec();
+    return writeOutRelations(query);
+}
+
 vector<computer> Database::writeComToVector(QSqlQuery query) {
     vector<computer> tmp;
     while (query.next()) {

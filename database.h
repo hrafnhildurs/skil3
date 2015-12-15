@@ -59,6 +59,7 @@ public:
 
     // Vector containing relations between computers and computer scientists
     vector<relations> relation();
+    vector<relations> searchRelation(string searchWord);
 
 
     // Helper delete functions
