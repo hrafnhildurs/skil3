@@ -27,7 +27,7 @@ void Manager::addNamesRelations(int id, string p, string c) {
 }
 
 bool Manager::checkDuplicateRelations(int pid, int cid) {
-    db.checkDuplicateRelations(pid, cid);
+    return db.checkDuplicateRelations(pid, cid);
 }
 
 
