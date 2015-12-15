@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_MainWindow_t {
-    QByteArrayData data[24];
-    char stringdata[621];
+    QByteArrayData data[23];
+    char stringdata[617];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,21 +38,20 @@ QT_MOC_LITERAL(5, 102, 31), // "on_input_searchProg_textChanged"
 QT_MOC_LITERAL(6, 134, 31), // "on_input_searchComp_textChanged"
 QT_MOC_LITERAL(7, 166, 35), // "on_combo_search_currentIndexC..."
 QT_MOC_LITERAL(8, 202, 32), // "on_table_programmers_cellClicked"
-QT_MOC_LITERAL(9, 235, 3), // "row"
-QT_MOC_LITERAL(10, 239, 6), // "column"
-QT_MOC_LITERAL(11, 246, 34), // "on_button_remove_scientist_cl..."
-QT_MOC_LITERAL(12, 281, 30), // "on_table_computers_cellClicked"
-QT_MOC_LITERAL(13, 312, 33), // "on_button_remove_computer_cli..."
-QT_MOC_LITERAL(14, 346, 30), // "on_table_relations_cellClicked"
-QT_MOC_LITERAL(15, 377, 33), // "on_button_remove_relation_cli..."
-QT_MOC_LITERAL(16, 411, 33), // "on_table_realation_person_cli..."
-QT_MOC_LITERAL(17, 445, 36), // "on_table_realation_computers_..."
-QT_MOC_LITERAL(18, 482, 31), // "on_button_add_relations_clicked"
-QT_MOC_LITERAL(19, 514, 38), // "on_table_programmers_itemDoub..."
-QT_MOC_LITERAL(20, 553, 17), // "QTableWidgetItem*"
-QT_MOC_LITERAL(21, 571, 4), // "item"
-QT_MOC_LITERAL(22, 576, 35), // "on_input_relationSearch_textC..."
-QT_MOC_LITERAL(23, 612, 8) // "showTime"
+QT_MOC_LITERAL(9, 235, 6), // "column"
+QT_MOC_LITERAL(10, 242, 34), // "on_button_remove_scientist_cl..."
+QT_MOC_LITERAL(11, 277, 30), // "on_table_computers_cellClicked"
+QT_MOC_LITERAL(12, 308, 33), // "on_button_remove_computer_cli..."
+QT_MOC_LITERAL(13, 342, 30), // "on_table_relations_cellClicked"
+QT_MOC_LITERAL(14, 373, 33), // "on_button_remove_relation_cli..."
+QT_MOC_LITERAL(15, 407, 33), // "on_table_realation_person_cli..."
+QT_MOC_LITERAL(16, 441, 36), // "on_table_realation_computers_..."
+QT_MOC_LITERAL(17, 478, 31), // "on_button_add_relations_clicked"
+QT_MOC_LITERAL(18, 510, 38), // "on_table_programmers_itemDoub..."
+QT_MOC_LITERAL(19, 549, 17), // "QTableWidgetItem*"
+QT_MOC_LITERAL(20, 567, 4), // "item"
+QT_MOC_LITERAL(21, 572, 35), // "on_input_relationSearch_textC..."
+QT_MOC_LITERAL(22, 608, 8) // "showTime"
 
     },
     "MainWindow\0on_button_add_scientist_clicked\0"
@@ -61,7 +60,7 @@ QT_MOC_LITERAL(23, 612, 8) // "showTime"
     "on_input_searchProg_textChanged\0"
     "on_input_searchComp_textChanged\0"
     "on_combo_search_currentIndexChanged\0"
-    "on_table_programmers_cellClicked\0row\0"
+    "on_table_programmers_cellClicked\0"
     "column\0on_button_remove_scientist_clicked\0"
     "on_table_computers_cellClicked\0"
     "on_button_remove_computer_clicked\0"
@@ -97,18 +96,18 @@ static const uint qt_meta_data_MainWindow[] = {
        5,    0,  107,    2, 0x08 /* Private */,
        6,    0,  108,    2, 0x08 /* Private */,
        7,    0,  109,    2, 0x08 /* Private */,
-       8,    2,  110,    2, 0x08 /* Private */,
-      11,    0,  115,    2, 0x08 /* Private */,
-      12,    2,  116,    2, 0x08 /* Private */,
-      13,    0,  121,    2, 0x08 /* Private */,
-      14,    2,  122,    2, 0x08 /* Private */,
-      15,    0,  127,    2, 0x08 /* Private */,
-      16,    0,  128,    2, 0x08 /* Private */,
-      17,    0,  129,    2, 0x08 /* Private */,
-      18,    0,  130,    2, 0x08 /* Private */,
-      19,    1,  131,    2, 0x08 /* Private */,
-      22,    0,  134,    2, 0x08 /* Private */,
-      23,    0,  135,    2, 0x08 /* Private */,
+       8,    1,  110,    2, 0x08 /* Private */,
+      10,    0,  113,    2, 0x08 /* Private */,
+      11,    1,  114,    2, 0x08 /* Private */,
+      12,    0,  117,    2, 0x08 /* Private */,
+      13,    1,  118,    2, 0x08 /* Private */,
+      14,    0,  121,    2, 0x08 /* Private */,
+      15,    0,  122,    2, 0x08 /* Private */,
+      16,    0,  123,    2, 0x08 /* Private */,
+      17,    0,  124,    2, 0x08 /* Private */,
+      18,    1,  125,    2, 0x08 /* Private */,
+      21,    0,  128,    2, 0x08 /* Private */,
+      22,    0,  129,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -117,16 +116,16 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,    9,   10,
+    QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,    9,   10,
+    QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int,    9,   10,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int,    9,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 20,   21,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 19,   20,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -144,11 +143,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 3: _t->on_input_searchProg_textChanged(); break;
         case 4: _t->on_input_searchComp_textChanged(); break;
         case 5: _t->on_combo_search_currentIndexChanged(); break;
-        case 6: _t->on_table_programmers_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 6: _t->on_table_programmers_cellClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 7: _t->on_button_remove_scientist_clicked(); break;
-        case 8: _t->on_table_computers_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 8: _t->on_table_computers_cellClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 9: _t->on_button_remove_computer_clicked(); break;
-        case 10: _t->on_table_relations_cellClicked((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 10: _t->on_table_relations_cellClicked((*reinterpret_cast< int(*)>(_a[1]))); break;
         case 11: _t->on_button_remove_relation_clicked(); break;
         case 12: _t->on_table_realation_person_clicked(); break;
         case 13: _t->on_table_realation_computers_clicked(); break;

@@ -506,7 +506,7 @@ void MainWindow::on_combo_search_currentIndexChanged()
     }
 }
 
-void MainWindow::on_table_programmers_cellClicked(int row, int column)
+void MainWindow::on_table_programmers_cellClicked(int column)
 {
     if(column == 0)
     {
@@ -538,7 +538,7 @@ void MainWindow::on_button_remove_scientist_clicked()
 
 }
 
-void MainWindow::on_table_computers_cellClicked(int row, int column)
+void MainWindow::on_table_computers_cellClicked(int column)
 {
     if(column == 0)
     {
@@ -570,7 +570,7 @@ void MainWindow::on_button_remove_computer_clicked()
     ui->button_remove_computer->setEnabled(false);
 }
 
-void MainWindow::on_table_relations_cellClicked(int row, int column)
+void MainWindow::on_table_relations_cellClicked(int column)
 {
     if(column)
     {

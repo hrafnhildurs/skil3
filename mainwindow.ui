@@ -273,8 +273,8 @@
         <property name="font">
          <font>
           <pointsize>8</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -292,8 +292,8 @@
         </property>
         <property name="font">
          <font>
-          <weight>75</weight>
-          <bold>true</bold>
+          <weight>50</weight>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -554,12 +554,6 @@
           <height>20</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
         <property name="text">
          <string>Date</string>
         </property>
@@ -572,13 +566,6 @@
           <width>71</width>
           <height>21</height>
          </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>8</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
         </property>
         <property name="text">
          <string>Clock</string>
@@ -705,12 +692,6 @@
            <height>20</height>
           </rect>
          </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
          <property name="text">
           <string>Date</string>
          </property>
@@ -723,13 +704,6 @@
            <width>71</width>
            <height>21</height>
           </rect>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>8</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
          </property>
          <property name="text">
           <string>Clock</string>
@@ -951,12 +925,6 @@
           <height>20</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
         <property name="text">
          <string>Date</string>
         </property>
@@ -969,13 +937,6 @@
           <width>71</width>
           <height>21</height>
          </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>8</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
         </property>
         <property name="text">
          <string>Clock</string>
@@ -1113,12 +1074,6 @@
           <height>20</height>
          </rect>
         </property>
-        <property name="font">
-         <font>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
-        </property>
         <property name="text">
          <string>Date</string>
         </property>
@@ -1131,13 +1086,6 @@
           <width>71</width>
           <height>21</height>
          </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>8</pointsize>
-          <weight>75</weight>
-          <bold>true</bold>
-         </font>
         </property>
         <property name="text">
          <string>Clock</string>
@@ -1204,13 +1152,6 @@ p, li { white-space: pre-wrap; }
            <height>21</height>
           </rect>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>8</pointsize>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
-         </property>
          <property name="text">
           <string>Clock</string>
          </property>
@@ -1223,12 +1164,6 @@ p, li { white-space: pre-wrap; }
            <width>91</width>
            <height>20</height>
           </rect>
-         </property>
-         <property name="font">
-          <font>
-           <weight>75</weight>
-           <bold>true</bold>
-          </font>
          </property>
          <property name="text">
           <string>Date</string>
